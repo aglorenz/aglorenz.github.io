@@ -100,7 +100,7 @@ button:hover {
   height: 600px;
   max-width: 100%;
   max-height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   margin-top: 2em;
 /*  margin-left: 0;*/
   background-color: #fff;
@@ -147,6 +147,7 @@ button:hover {
 .xmodal-footer {
   border-top: 1.5px solid #e0e0e0;  /* horizontal line */
   margin-top: 1.5em;
+  margin-bottom: 1.5em;
   padding-top: 1.5em;
 }
 
