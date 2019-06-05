@@ -9,6 +9,7 @@ function hasClass(elem, className) {
 // toggleClass
 function toggleClass(elem, className) {
   var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
+  console.log('hi');
   if (hasClass(elem, className)) {
     while (newClass.indexOf(' ' + className + ' ') >= 0) {
       newClass = newClass.replace(' ' + className + ' ', ' ');

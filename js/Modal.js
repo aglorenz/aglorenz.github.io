@@ -143,3 +143,23 @@ xClose.addEventListener('click', function(e) {
   document.querySelector('.xmodal').style.overflowY='hidden';
   //  dynamics.setTimeout(showBtn, 500);
 });
+
+////////////////////////////////
+// Close Modal on modal background click
+var amodal = document.getElementById('id01');
+
+window.onclick = function(event) {
+  if (event.target == amodal) {
+    hideModal();  // slide modal off screen
+    dynamics.setTimeout(toggleClasses, 375);
+    document.querySelector('.xmodal').style.overflowY='hidden';    
+  }
+}
+/*
+modalBg.addEventListener('click', function(e) {
+  hideModal();  // slide modal off screen
+  dynamics.setTimeout(toggleClasses, 375);
+  document.querySelector('.xmodal').style.overflowY='hidden';
+  //  dynamics.setTimeout(showBtn, 500);
+});
+*/
