@@ -1,7 +1,7 @@
 // External JS: JS Helper Functions
 // External JS: Dynamics JS
 // Code by Phillip Rappold https://codepen.io/rppld/pen/vOvdyQ
-alert("modal.js loaded");
+//alert("modalV2.js loaded");
 
 var btnOpen = select('.js-open');
 var btnClose = select('.js-close');

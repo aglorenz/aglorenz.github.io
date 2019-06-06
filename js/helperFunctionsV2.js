@@ -1,6 +1,6 @@
 // Helper Functionsby Philipp Rappold
 // https://codepen.io/rppld/pen/KpbZWY
-alert("HelperFunctions.js loaded");
+//alert("HelperFunctions.js loaded");
 // hasClass
 function hasClass(elem, className) {
   return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');

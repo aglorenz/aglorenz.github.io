@@ -1,9 +1,10 @@
+// alert("main.js loaded");
+
 // Collapse navbar menu on selection click.  
 // Source: https://www.codeply.com/go/XtiWqN3lGn
 $('.navbar-nav>li>a').on('click', function(){
     $('.navbar-collapse').collapse('hide');
 });
-alert("main.js loaded");
 
 // smooth scrolling 
 // source:  lost link :( 
