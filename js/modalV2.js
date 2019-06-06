@@ -147,7 +147,7 @@ xClose.addEventListener('click', function(e) {
 
 ////////////////////////////////
 // Close Modal on modal background click
-/*var amodal = document.getElementById('id01');
+var amodal = document.getElementById('id01');
 
 window.onclick = function(event) {
   if (event.target == amodal) {
@@ -155,7 +155,7 @@ window.onclick = function(event) {
     dynamics.setTimeout(toggleClasses, 375);
     document.querySelector('.xmodal').style.overflowY='hidden';    
   }
-}*/
+}
 /*
 modalBg.addEventListener('click', function(e) {
   hideModal();  // slide modal off screen
