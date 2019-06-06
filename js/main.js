@@ -3,7 +3,7 @@
 $('.navbar-nav>li>a').on('click', function(){
     $('.navbar-collapse').collapse('hide');
 });
-//alert("main.js loaded");
+alert("main.js loaded");
 
 // smooth scrolling 
 // source:  lost link :( 
