@@ -156,7 +156,7 @@ window.onclick = function(event) {
     dynamics.setTimeout(toggleClasses, 375);
     document.querySelector('.xmodal').style.overflowY='hidden';    
   } /*else { alert(event.target.className);*/
-  /*console.log('not modalBG',event.target);*/}
+  /*console.log('not modalBG',event.target);*/
 }
 /*
 modalBg.addEventListener('click', function(e) {
