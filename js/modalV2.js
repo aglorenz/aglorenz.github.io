@@ -1,6 +1,6 @@
 // External JS: JS Helper Functions
 // External JS: Dynamics JS
-// Code by Phillip Rappold https://codepen.io/rppld/pen/vOvdyQ
+// Code by Phillip Rappold and Andrew Lorenz where specified https://codepen.io/rppld/pen/vOvdyQ
 //alert("modalV2.js loaded");
 
 var btnOpen = select('.js-open');
@@ -147,14 +147,15 @@ xClose.addEventListener('click', function(e) {
 
 ////////////////////////////////
 // Close Modal on modal background click
-var amodal = document.getElementById('id01');
+var modalBg = document.getElementById('modalBg');
 
 window.onclick = function(event) {
-  if (event.target == amodal) {
+  if (event.target == modalBg) {
     hideModal();  // slide modal off screen
     dynamics.setTimeout(toggleClasses, 375);
     document.querySelector('.xmodal').style.overflowY='hidden';    
-  }
+  } else { alert(event.target.className);
+  /*console.log('not modalBG',event.target);*/}
 }
 /*
 modalBg.addEventListener('click', function(e) {
