@@ -150,6 +150,7 @@ xClose.addEventListener('click', function(e) {
 var modalBg = document.getElementById('modalBg');
 
 window.onclick = function(event) {
+  alert(event.target.className);  
   if (event.target == modalBg) {
     hideModal();  // slide modal off screen
     dynamics.setTimeout(toggleClasses, 375);
