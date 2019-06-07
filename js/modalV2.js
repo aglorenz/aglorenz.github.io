@@ -155,7 +155,7 @@ window.onclick = function(event) {
     hideModal();  // slide modal off screen
     dynamics.setTimeout(toggleClasses, 375);
     document.querySelector('.xmodal').style.overflowY='hidden';    
-  } else { alert(event.target.className);
+  } /*else { alert(event.target.className);*/
   /*console.log('not modalBG',event.target);*/}
 }
 /*
