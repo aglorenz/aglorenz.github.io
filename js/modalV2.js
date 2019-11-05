@@ -10,16 +10,15 @@
 // Original code by Phillip Rappold https://codepen.io/rppld/pen/vOvdyQ
 
 //alert("modalV2.js loaded");
-
-var btnOpen = select('.js-open');
-var btnClose = select('.js-close');
-var xClose = select('.js-xclose')
-var modalBg = select('.xmodal-bg.is-active');
-var modal = select('.js-modal');
-var modalChildren = modal.children;
+// var btnOpen = select('.xmodal-open'); // trigger to open modal
+// var modalBg = null;   // modal background
+// var modal = select('.xmodal-content'); // element containing the current modal
+//var modalChildren = modal.children;  // modal children to animate individually
+// var btnClose = select('.xmodal-close'); // close modal on Close btn click
+// var xClose = select('.xclose'); // close modal on X click
 
 function toggleClasses() {
-//  toggleClass(btnOpen, 'is-active');
+//  toggleClass(btnOpen, 'is-active');  
 //  toggleClass(modal, 'is-active');
   toggleClass(modalBg, 'is-active'); // hide/display modal background
 }
@@ -27,8 +26,9 @@ function toggleClasses() {
 //------------------ Show Modal Functions -----------------//
 
 // added by Andrew Lorenz
-function fadeInModalBg() {
+function fadeInModalBg(modalBg) {
   // Animate to final properties
+  console.log('modalBg is', modalBg);
   dynamics.animate(modalBg, {
     opacity: 1
 //    background: rgba(0, 0, 0, 1) // doesn't animate
@@ -38,11 +38,11 @@ function fadeInModalBg() {
   });
 }
 
-function bounceInModal() {
+function bounceInModal(modal) {
   // Define initial properties
   dynamics.css(modal, {
-    opacity: .1, // 0
-    scale: .5  
+    opacity: 0.1, // 0
+    scale: 0.5
   });
   
   // Animate to final properties
@@ -57,9 +57,9 @@ function bounceInModal() {
   });
 }
 
-function bounceInModalChildren() {
+function bounceInModalChildren(modalChildren) {
   // Animate each child separately
-  for(var i=0; i<modalChildren.length; i++) {
+  for (var i=0; i<modalChildren.length; i++) {
     var item = modalChildren[i];
     
     // Define initial properties
@@ -86,21 +86,21 @@ function bounceInModalChildren() {
   } 
 }
 
-function showModal() {
-  toggleClasses(); /* set display: flex */
-  fadeInModalBg(); 
-  /* delay modal animation to allow time for background fade in */
-  dynamics.setTimeout(bounceInModal, 150);
-  dynamics.setTimeout(bounceInModalChildren, 150);
-  /* Pause so modal displays fully before adding Y-scrollbar.  Otherwise, get ugly text bounce during animation */
-  dynamics.setTimeout(function () {
-    document.querySelector('.xmodal').style.overflowY='auto';
-    }, 700);
-}
+// function showModal() {
+//   toggleClasses(); /* set display: flex  from 'none' */
+//   fadeInModalBg(); 
+//   /* delay modal animation to allow time for background fade in */
+//   dynamics.setTimeout(bounceInModal, 150);
+//   dynamics.setTimeout(bounceInModalChildren, 150);
+//   /* Pause so modal displays fully before adding Y-scrollbar.  Otherwise, get ugly text bounce during animation */
+//   dynamics.setTimeout(function () {
+//     document.querySelector('.xmodal-content').style.overflowY='auto';
+//     }, 700);
+// }
 
 //------------------ Hide Modal Functions -----------------//
 
-function fadeOutModalBG() {
+function fadeOutModalBg(modalBg) {
   // Animate to final properties from existing opacity of 1
   dynamics.animate(modalBg, {
     opacity: 0
@@ -111,7 +111,7 @@ function fadeOutModalBG() {
   });
 }
 
-function slideOutModal() {
+function slideOutModal(modal) {
   /* Slide the modal down off screen */
   dynamics.animate(modal, {
     opacity: 0,  // 0
@@ -124,46 +124,109 @@ function slideOutModal() {
   });
 }
 
-function hideModal() {
-  fadeOutModalBG();
-  slideOutModal();
+
+function closestEl(el, selector) {
+  var doc = el.document || el.ownerDocument;
+  var matches = document.querySelectorAll(selector);
+  var i;
+  while (el) {
+      i = matches.length - 1;
+      while (i >= 0) {
+          if (matches.item(i) === el) {
+              return el;
+          }
+          i -= 1;
+      }
+      el = el.parentElement;
+  }
+// in theory, this section should never be reached
+  return el;
+}
+
+function hideModal(modalBg, modal) {
+  fadeOutModalBg(modalBg);
+  slideOutModal(modal);
   /* Pause to allow modal to slide down before hiding it */
   dynamics.setTimeout(toggleClasses, 450);
   /* Turn off the Y-scrollbar */
-  document.querySelector('.xmodal').style.overflowY='hidden';
+  document.querySelector('.xmodal-content').style.overflowY='hidden';
 }
+
 
 //----------------  Event Listeners -----------------------//
 
 ///////////////////////////////
-// Open the Modal on button click
+// Open the respective modal on button click - handles multiple modals
+var modalBtns = document.querySelectorAll(".xmodal-open");
 
-btnOpen.addEventListener('click', function(e) {
-  showModal();
+modalBtns.forEach(function addBtnClickEvent(btn) {
+    btn.onclick = function showModal() {
+        var modalDataAttribute = btn.getAttribute("data-xmodal-target");
+        modal = document.getElementById(modalDataAttribute);
+        modalBg = modal.parentElement;
+        console.log('opening modalBg = ',modalBg);
+        toggleClass(modalBg, 'is-active'); // hide/display modal background
+        //toggleClasses(); /* set modal to display: flex from 'none' */
+        fadeInModalBg(modalBg); 
+        /* delay modal animation to allow time for background fade in */
+        dynamics.setTimeout(bounceInModal(modal), 150);
+        dynamics.setTimeout(bounceInModalChildren(modal.children), 150);
+        /* Pause so modal displays fully before adding Y-scrollbar.  Otherwise, get ugly text bounce during animation */
+        dynamics.setTimeout(function () {
+            document.querySelector('.xmodal-content').style.overflowY='auto';
+        }, 700);
+        //document.getElementById(modal).style.display = "block";
+    };
 });
 
 ////////////////////////////////
-// Close Modal on button click
-
-btnClose.addEventListener('click', function(e) {
-  hideModal();  
-});
+// Open modal on button click - for single modal
+// btnOpen.addEventListener('click', function(e) {
+//   console.log(e.target.attributes['data-target']);
+//   showModal();
+// });
 
 ////////////////////////////////
-// Close Modal on X click
+// Close modal on Close button or X click
+var closeBtns = document.querySelectorAll(".xmodal-close");
+console.log('close buttons = ',closeBtns);
 
-xClose.addEventListener('click', function(e) {
-  hideModal();  
+closeBtns.forEach(function addCloseclickEvent(btn) {
+    btn.onclick = function myHideModal() {
+      var modal = closestEl(btn, ".xmodal-content");
+      var modalBg = modal.parentElement;
+      hideModal(modalBg, modal);
+        // var modal = closestEl(btn, ".xmodal-content");
+        // var modalBg = modal.parentElement;
+        // fadeOutModalBg(modalBg);
+        // slideOutModal(modal);
+    /* Pause to allow modal to slide down before hiding it */
+    // dynamics.setTimeout(toggleClasses, 450);
+    /* Turn off the Y-scrollbar */
+    // document.querySelector('.xmodal-content').style.overflowY='hidden';
+        //modal.style.display = "none";
+    };
 });
+
+// btnClose.addEventListener('click', function(e) {
+//   hideModal();  
+// });
+
+////////////////////////////////
+// Close modal on X click
+
+// xClose.addEventListener('click', function(e) {
+//   hideModal();  
+// });
 
 ////////////////////////////////
 // Close Modal on modal background click
-var modalBg = document.getElementById('xmodalBgID');
-
-window.onclick = function(event) {
-//  alert(event.target.className);  
-  if (event.target == modalBg) {
-    hideModal();  
+window.onclick = function closeOnClick(event) {
+  //alert(event.target.className);  
+  if (event.target.className === 'xmodal-bg is-active') {
+    var modalBg = event.target;
+    var modal = modalBg.firstElementChild;
+    hideModal(modalBg, modal);
   } /*else { alert(event.target.className);*/
-  /*console.log('not modalBG',event.target);*/
+  /*console.log('not modalBg',event.target);*/
 }

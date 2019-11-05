@@ -4,7 +4,7 @@
 /*	left: 0;  */
 	padding-top: 11px;
 /*	margin: auto; */
-}
+} 
 /*.navbar-toggle {
 	z-index:3;
 }*/
@@ -79,10 +79,10 @@ button:hover {
   right: 0;
   bottom: 0;
   left: 0;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, .3);  
+  background: rgba(0, 0, 0, .35 );  
   opacity: 0;
   pointer-events: none;
 /*
@@ -96,13 +96,12 @@ button:hover {
 
 .xmodal-bg.is-active {
   pointer-events: auto;
+  display: flex;
 }
-
-
 
 /* using 'x'modal prevents conflict with Bootstrap modal styling. 
   I tried to build a custom Bootstrap import on their website with no modal features but was unsuccessful. May try again another day */
-.xmodal {  /* Used by x-men */
+.xmodal-content {  /* Used by x-men x-people */
   width: 600px;
   max-height: 100%;
   background-color: #fff;
@@ -113,9 +112,10 @@ button:hover {
   line-height: 1.5;
   position: relative;
   box-shadow: 5px 5px 17px #f0592f;
-  opacity: 0;
-}
+  opacity: 0; /* so we can animate transition to visible */
+  }
 
+/* Styling for the 'X' close button */
 .xclose {
   position: absolute; /* used because float impacts centering of icons */
   z-index: 100; /* makes hover work correctly on position absolute */
@@ -134,6 +134,7 @@ button:hover {
   min-height: 17px;
   border-bottom: 1.5px solid #e0e0e0; /* horizontal line */
   margin-bottom: 2em;
+  padding-bottom: 5px;
 }
 
 .xmodal-hdr-icon {

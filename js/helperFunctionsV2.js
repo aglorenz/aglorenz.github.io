@@ -17,11 +17,13 @@ function toggleClass(elem, className) {
   } else {
     elem.className += ' ' + className;
   }
+  //elem.style.display = 'block';
 }
 
 // select
 function select(selector) {
   var elements = document.querySelectorAll(selector);
+  console.log('elements = ',elements);
 
   if (elements.length > 1) {
     return elements;
