@@ -142,8 +142,13 @@
     // Below line of code breaks when adding parameter.  Use above method instead.
     // dynamics.setTimeout(toggleClasses(modalBg), 450); 
     
-    /* Turn off the Y-scrollbar */
-    modal.style.overflowY='';
+    /* Turn off the Y-scrollbar on the Modal <-- move scrolling to outer div*/
+    dynamics.setTimeout(function () {
+      modal.style.overflowY='';
+      document.body.style.paddingRight = "";
+      document.body.style.overflow = "auto"; // ADD THIS LINE
+    }, 450);
+    // document.body.style.height = "auto"; // ADD THIS LINE
     // document.querySelector('.xmodal-content').style.overflowY='hidden';
   }
 
@@ -163,6 +168,9 @@
       var modalDataAttribute = btn.getAttribute("data-xmodal-target");
       var modal = document.getElementById(modalDataAttribute);
       var modalBg = modal.parentElement;
+      document.body.style.overflow = "hidden"; // ADD THIS LINE
+      document.body.style.paddingRight = "17px";
+      // document.body.style.height = "100%"; // ADD THIS LINE
       toggleClass(modalBg, 'is-active'); // hide/display modal background
       fadeInModalBg(modalBg); 
       /* delay modal animation to allow time for background fade in */
@@ -172,7 +180,6 @@
       //document.querySelector('.xmodal-content').style.overflowY='auto';
       dynamics.setTimeout(function () {
         modal.style.overflowY='auto';
-        // document.querySelector('.xmodal-content').style.overflowY='auto';
       }, 700);
     };
   });
