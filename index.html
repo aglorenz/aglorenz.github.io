@@ -8,11 +8,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<!--    <link rel="stylesheet" href="./css/bootstrap-no-modal.min.css">-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<!--    <link rel="stylesheet" href="./css/bootstrap-no-modal.min.js">-->
     <link rel="stylesheet" href="./css/styles.css">
 
     <!-- Using Font Awesome -->
@@ -42,10 +40,12 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" href="#home" onclick="test('home'); return false;">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#home" onclick="test('home'); 
+              return false;">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#devSkills" onclick="test('devSkills'); return false;">Skills</a>
+            <a class="nav-link" href="#techSkills" onclick="test('techSkills'); 
+              return false;">Skills</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#projects">Projects</a>
@@ -65,9 +65,6 @@
     </nav>
     <!-- /Navigation -->
 
-    <!--  Spacer so the header element is not obscured -->
-    <!-- <div class=spacer>
-    </div> -->
 
     <!----------------------------- HEADER --------------------------------->
     <header id="home" class="header">
@@ -77,10 +74,10 @@
       </div> 
     </header>
 
-      <!----------------------------- TECHNICAL SKILLS --------------------------------->
     <main>
-      <section id="devSkills" class="dev-skills">
-        <h1 class="dev-skills-hdr"><br>Technical Skills</h1>
+      <!----------------------------- TECHNICAL SKILLS --------------------------------->
+      <section id="techSkills" class="tech-skills">
+        <h1 class="tech-skills-hdr">Technical Skills</h1>
         <h5 style="color: antiquewhite"><img src="img/icons8-under-construction-52.png" alt="missing" width="40" height="40">
           Point of pride:  I created the modals with vanilla JavaScript, dynamics.js, and no Bootstrap! (A true labor of love!)
           <img src="img/icons8-under-construction-52.png" alt="missing" width="40" height="40"></h5>
@@ -101,39 +98,6 @@
               Skills Summary
             </button>
               
-            <!-- onclick="" needed to register click for Safari -->
-            <div class="xmodal-bg" onclick="">
-              <div id="webDevModal" class="xmodal-content">
-                <span class="xclose xmodal-close">&times;</span>
-                <div class="xmodal-hdr">
-                  <img src="./img/HTML5_logo.png" alt="HTML5" class="xmodal-hdr-icon"> 
-                  <img src="./img/CSS3_logo.png" alt="CSS3" class="xmodal-hdr-icon">
-                  <img src="./img/JS_logo.png" alt="JavaScript" class="xmodal-hdr-icon">
-                </div>
-                <h1 class="xmodal-body-title">The Building Blocks of Web Development</h1>
-                <div class="xmodal-body"> <!-- separate divs needed for object animation separation -->
-                  <p class="xmodal-body-txt">I have long enjoyed making my environment beautiful and 
-                    functional, whether it be through inspiring art, well placed furniture, or purposeful 
-                    objects. With these web tools at hand, I have begun to do the same on the computer. It 
-                    has been, and still is, an exciting ever-expanding journey! </p>
-                </div>
-                <div class="xmodal-body">
-                  <h5 class=xmodal-list-hdr>I am familiar with:</h5>
-                  <ul class=xmodal-body-txt>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>Bootstrap4</li>
-                    <li>JavaScript (and debugger!)</li>
-                    <li>JQuery</li>
-                    <li>VueJS (currently learning)</li>
-                  </ul>
-                </div>
-                <div class="xmodal-footer">
-                  <button class="xmodal-close">Close</button>
-                  <br>
-                </div>
-              </div> <!-- xmodal -->
-            </div> <!-- xmodal-bg -->
           </div>  <!-- Skill Cell Web Development -->
 
           <!------------------------------------ SQL --------------------------------->  
@@ -148,39 +112,6 @@
                 Skills Summary
               </button>
 
-              <!-- onclick="" needed to register click for Safari -->
-              <div class="xmodal-bg" onclick="" >
-                <div id="sqlModal" class="xmodal-content">
-                  <span class="xclose xmodal-close">&times;</span>
-                  <div class="xmodal-hdr">
-                      <img src="img/MSSQLServer.png" alt="MS SQL Server" class="cell-icon">
-                  </div>
-                  <h1 class="xmodal-body-title">SQL and Database Technology</h1>
-                  <div class="xmodal-body">  <!-- separate divs needed for object animation separation -->
-                    <p class="xmodal-body-txt">I spent my 2+ decade career at Intel in various job roles around
-                      database technology including DBA duties for development, QA, and production release, 
-                      data loading, data extraction and reporting, Enterprise Data Warehouse (EDW) production 
-                      support lead (Teradata). EDW job flow design and monitoring, database conversion programs,  
-                      I look forward to using these plus my new C# .Net skills as I transition to a Full Stack 
-                      Developer.</p>
-                  </div>
-                  <div class="xmodal-body">
-                    <h5 class=xmodal-list-hdr>I am familiar with:</h5>
-                      <ul class=xmodal-body-txt>
-                        <li>SQL Server 2012-2016</li>
-                        <li>Database Administration Duties</li>
-                        <li>Enterprise Data Warehouse roles</li>
-                        <li>Report Writing</li>
-                        <li>LINQ to SQL</li>
-                        <li>ETL</li>
-                      </ul>
-                  </div>
-                  <div class="xmodal-footer">
-                    <button class="xmodal-close">Close</button>
-                    <br>
-                  </div>
-                </div> --> <!-- xmodal -->
-              </div> <!-- xmodal-bg -->
             </div>   <!-- Skill Cell SQL -->
 
           <!------------------------------------ Version Control --------------------------------->  
@@ -196,57 +127,185 @@
                 Skills Summary
               </button>
 
-              <!-- onclick="" needed to register click for Safari -->
-              <div class="xmodal-bg" onclick="" >
+        </div>  <!-- Skills Flex-->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </section>   <!-- Tech Skills --> 
+
+      <section id="projects" class="projects">
+          <!-- <div class="projects-spacer"></div> -->
+          <h1 class="tech-skills-hdr">Projects</h1>
+          hi these are my projects<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+      </section>  
+
+      <!-- Modals go here so they can be in their own stacking context (for z-index) -->
+
+      <!------------------------------- Web Development -------------------------------->
+      <!-- onclick="" needed to register click for Safari -->
+      <div class="xmodal-bg" onclick="">
+          <div id="webDevModal" class="xmodal-content">
+            <span class="xclose xmodal-close">&times;</span>
+            <div class="xmodal-hdr">
+              <img src="./img/HTML5_logo.png" alt="HTML5" class="xmodal-hdr-icon"> 
+              <img src="./img/CSS3_logo.png" alt="CSS3" class="xmodal-hdr-icon">
+              <img src="./img/JS_logo.png" alt="JavaScript" class="xmodal-hdr-icon">
+            </div>
+            <h1 class="xmodal-body-title">The Building Blocks of Web Development</h1>
+            <div class="xmodal-body"> <!-- separate divs needed for object animation separation -->
+              <p class="xmodal-body-txt">I have long enjoyed making my environment beautiful and 
+                functional, whether it be through inspiring art, well placed furniture, or purposeful 
+                objects. With these web tools at hand, I have begun to do the same on the computer. It 
+                has been, and still is, an exciting ever-expanding journey! </p>
+              </div>
+              <div class="xmodal-body">
+                <h5 class=xmodal-list-hdr>I am familiar with:</h5>
+                <ul class=xmodal-body-txt>
+                  <li>HTML5</li>
+                  <li>CSS3</li>
+                  <li>Bootstrap4</li>
+                  <li>JavaScript (and debugger!)</li>
+                  <li>JQuery</li>
+                  <li>VueJS (currently learning)</li>
+                </ul>
+              </div>
+              <div class="xmodal-footer">
+                <button class="xmodal-close">Close</button>
+                <br>
+            </div>
+          </div> <!-- xmodal -->
+        </div> <!-- xmodal-bg -->
+        
+        <!------------------------------------ SQL ----------------------------------->
+        <!-- onclick="" needed to register click for Safari -->
+        <div class="xmodal-bg" onclick="" >
+            <div id="sqlModal" class="xmodal-content">
+              <span class="xclose xmodal-close">&times;</span>
+              <div class="xmodal-hdr">
+                <img src="img/MSSQLServer.png" alt="MS SQL Server" class="cell-icon">
+              </div>
+              <h1 class="xmodal-body-title">SQL and Database Technology</h1>
+              <div class="xmodal-body">  <!-- separate divs needed for object animation separation -->
+                <p class="xmodal-body-txt">I spent my 2+ decade career at Intel in various job roles around
+                  database technology including DBA duties for development, QA, and production release, 
+                  data loading, data extraction and reporting, Enterprise Data Warehouse (EDW) production 
+                  support lead (Teradata). EDW job flow design and monitoring, database conversion programs,  
+                  I look forward to using these plus my new C# .Net skills as I transition to a Full Stack 
+                  Developer.</p>
+                </div>
+                <div class="xmodal-body">
+                  <h5 class=xmodal-list-hdr>I am familiar with:</h5>
+                  <ul class=xmodal-body-txt>
+                    <li>SQL Server 2012-2016</li>
+                    <li>Database Administration Duties</li>
+                    <li>Enterprise Data Warehouse roles</li>
+                    <li>Report Writing</li>
+                    <li>LINQ to SQL</li>
+                    <li>ETL</li>
+                  </ul>
+                </div>
+                <div class="xmodal-footer">
+                  <button class="xmodal-close">Close</button>
+                  <br>
+                </div>
+              </div> --> <!-- xmodal -->
+            </div> <!-- xmodal-bg -->
+            
+            <!------------------------------ Version Control -------------------------->
+            <!-- onclick="" needed to register click for Safari -->
+            <div class="xmodal-bg" onclick="" >
                 <div id="versionControlModal" class="xmodal-content">
                   <span class="xclose xmodal-close">&times;</span>
                   <div class="xmodal-hdr">
-                      <!-- <img src="img/Git-Icon-Orange2.png" alt="Version Control" class="cell-icon"> -->
-                      <img src="img/gitClearBranch.png" alt="Version Control" class="cell-icon">
-                  </div>
-                  <h1 class="xmodal-body-title">VSS &#x279d TFS &#x279d Git </h1>
-                  <div class="xmodal-body">  <!-- separate divs needed for object animation separation -->
-                    <p class="xmodal-body-txt">In college, one of our assignments was to write (in Pascal, no less!) a 
-                      Module Library System to store the latest version of each 'module' of code. Version control has become
-                      so much more sophisticated since then. My professional experience with version control began with 
-                      Visual SourceSafe, then to Team Foundation Server (at Intel), and now, Git.
-                    </p>
-                  </div>
-                  <div class="xmodal-body">
-                    <h5 class=xmodal-list-hdr>I am familiar with:</h5>
-                      <ul class=xmodal-body-txt>
-                        <li>Git / Git Bash</li>
-                        <li>GitHub</li>
-                        <li>Team Foundation Server (TFS)</li>
-                        <li>Visual SourceSafe (VSS)</li>
-                      </ul>
-                  </div>
-                  <div class="xmodal-footer">
-                    <button class="xmodal-close">Close</button>
-                    <br>
-                  </div>
-                </div> --> <!-- xmodal -->
-              </div> <!-- xmodal-bg -->
-            </div>   <!-- Skill Cell Version Control -->
-        </div>  <!-- Skills Flex-->
-
-
-
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
-        
-      </section>   <!-- Dev Skills -->     
+                  <!-- <img src="img/Git-Icon-Orange2.png" alt="Version Control" class="cell-icon"> -->
+                  <img src="img/gitClearBranch.png" alt="Version Control" class="cell-icon">
+                </div>
+                <h1 class="xmodal-body-title">VSS &#x279d TFS &#x279d Git </h1>
+                <div class="xmodal-body">  <!-- separate divs needed for object animation separation -->
+                  <p class="xmodal-body-txt">In college, one of our assignments was to write (in Pascal, no less!) a 
+                  Module Library System to store the latest version of each 'module' of code. Version control has become
+                  so much more sophisticated since then. My professional experience with version control began with 
+                  Visual SourceSafe, then to Team Foundation Server (at Intel), and now, Git.
+                </p>
+              </div>
+              <div class="xmodal-body">
+                <h5 class=xmodal-list-hdr>I am familiar with:</h5>
+                  <ul class=xmodal-body-txt>
+                    <li>Git / Git Bash</li>
+                    <li>GitHub</li>
+                    <li>Team Foundation Server (TFS)</li>
+                    <li>Visual SourceSafe (VSS)</li>
+                  </ul>
+              </div>
+              <div class="xmodal-footer">
+                <button class="xmodal-close">Close</button>
+                <br>
+              </div>
+            </div> --> <!-- xmodal -->
+          </div> <!-- xmodal-bg -->
+        </div>   <!-- Skill Cell Version Control -->
+  
     </main>
-      <!-- /Start Dev Skills Section -->
+      <!-- /Start Tech Skills Section -->
           <!-- Optional JavaScript -->
           <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
@@ -267,7 +326,6 @@
 
     <!-- JQuery found on W3schools.com for smooth scrolling (instead of jump) to anchor points -->
     <script src="./js/main.js"></script>
-<!--    <script src="./js/smoothScroll.js"></script>-->
     
     
     <!--  Code by Phillip Rappold

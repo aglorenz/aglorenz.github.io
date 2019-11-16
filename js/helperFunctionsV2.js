@@ -17,7 +17,6 @@ function toggleClass(elem, className) {
   } else {
     elem.className += ' ' + className;
   }
-  //elem.style.display = 'block';
 }
 
 // select

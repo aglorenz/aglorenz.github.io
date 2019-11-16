@@ -13,13 +13,13 @@
 //  pointed to by Paul_Wilkins on Stack Overflow at 
 //  https://www.sitepoint.com/community/t/how-to-get-this-script-to-work-for-multiple-modal-popups/252443/11
 
-//alert("modalV2.js loaded");
+//alert('modalV2.js loaded');
 
 //Imediately Invoked Function Expression
 (function () { 
   // execute code in srict mode.
   // e.g., can't use undeclared vars
-  "use strict"; 
+  'use strict'; 
   
   function toggleClasses(modalBg) {
   toggleClass(modalBg, 'is-active'); // hide/display modal background
@@ -131,7 +131,7 @@
   }
 
   ///////////////////////////////
-  // Close the modal (animated)
+  // Hide the modal (animated)
   function hideModal(modalBg, modal) {
     fadeOutModalBg(modalBg);
     slideOutModal(modal);
@@ -142,14 +142,14 @@
     // Below line of code breaks when adding parameter.  Use above method instead.
     // dynamics.setTimeout(toggleClasses(modalBg), 450); 
     
-    /* Turn off the Y-scrollbar on the Modal <-- move scrolling to outer div*/
+    // Turn off the Y-scrollbar on the ModalBg
     dynamics.setTimeout(function () {
-      modal.style.overflowY='';
-      document.body.style.paddingRight = "";
-      document.body.style.overflow = "auto"; // ADD THIS LINE
+      modalBg.style.overflowY='';
+      //put body scroll back
+      document.body.style.paddingRight = '';
+      document.body.style.overflow = 'auto'; 
     }, 450);
-    // document.body.style.height = "auto"; // ADD THIS LINE
-    // document.querySelector('.xmodal-content').style.overflowY='hidden';
+    // document.body.style.height = 'auto'; // ADD THIS LINE
   }
 
 
@@ -157,7 +157,7 @@
 
   ///////////////////////////////
   // Get a list of all buttons with class='xmodal-open'
-  var modalBtns = document.querySelectorAll(".xmodal-open");
+  var modalBtns = document.querySelectorAll('.xmodal-open');
 
   // Add a 'click' event listener for each open modal button
   // The function called by event listener, retrieves the unique 
@@ -165,28 +165,24 @@
   // This value identifies the modal which is then displayed.
   modalBtns.forEach(function addBtnClickEvent(btn) {
     btn.onclick = function showModal() {
-      var modalDataAttribute = btn.getAttribute("data-xmodal-target");
+      var modalDataAttribute = btn.getAttribute('data-xmodal-target');
       var modal = document.getElementById(modalDataAttribute);
       var modalBg = modal.parentElement;
-      document.body.style.overflow = "hidden"; // ADD THIS LINE
-      document.body.style.paddingRight = "17px";
-      // document.body.style.height = "100%"; // ADD THIS LINE
-      toggleClass(modalBg, 'is-active'); // hide/display modal background
+      document.body.style.overflow = 'hidden'; 
+      document.body.style.paddingRight = '17px'; // placeholder for scrollbar
+      modalBg.style.overflowY='auto';
+      // document.body.style.height = '100%'; // ADD THIS LINE
+      toggleClass(modalBg, 'is-active'); // display modal background
       fadeInModalBg(modalBg); 
       /* delay modal animation to allow time for background fade in */
       dynamics.setTimeout(bounceInModal(modal), 150);
       dynamics.setTimeout(bounceInModalChildren(modal.children), 150);
-      /* Pause so modal displays fully before adding Y-scrollbar.  Otherwise, get ugly text bounce during animation */
-      //document.querySelector('.xmodal-content').style.overflowY='auto';
-      dynamics.setTimeout(function () {
-        modal.style.overflowY='auto';
-      }, 700);
     };
   });
 
   ////////////////////////////////
   // // get a list of all elements with the 'xmodal-close' class
-  var closeBtns = document.querySelectorAll(".xmodal-close");
+  var closeBtns = document.querySelectorAll('.xmodal-close');
 
   // For each 'xmodal-close' element found, create an event listener
   // on-click. The function invoked will search for the nearest
@@ -194,7 +190,7 @@
   // modal is closed.
   closeBtns.forEach(function addCloseclickEvent(btn) {
     btn.onclick = function setupHideModal() {
-      var modal = closestEl(btn, ".xmodal-content");
+      var modal = closestEl(btn, '.xmodal-content');
       var modalBg = modal.parentElement;
       hideModal(modalBg, modal);
     };
