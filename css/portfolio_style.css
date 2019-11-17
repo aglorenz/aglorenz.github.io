@@ -145,20 +145,20 @@ button:hover {
 
 .xmodal-container {
   width: 600px;
-  margin: 87px auto 0px;
+  /* margin: 87px auto 0px; */
   padding-bottom: 30px;
 
-  /* margin-top: 87px; */
-  /* margin-bottom: 30px; */
-  /* margin: auto; */
-  /* position: relative; */
+  margin-top: 87px;
+  margin-bottom: 30px;
+  margin: auto;
+  position: relative;
 }
 
 /* using 'x'modal prevents conflict with Bootstrap modal styling. 
   I tried to build a custom Bootstrap import on their website with no modal features but was unsuccessful. May try again another day */
 .xmodal-content {  /* Used by x-men x-women x-people x-lovers etc*/
   width: 600px;
-  margin: 87px auto 0px;
+  /* margin: 87px auto 0px; */
   padding-bottom: 30px;
   /* max-height: 100%; */
   background-color: #fff;
@@ -167,7 +167,7 @@ button:hover {
   /* text-align: center; */
   font-size: 14px;
   line-height: 1.5;
-  position: relative;
+  /* position: relative; */
   /* top: 57px; */
   box-shadow: 5px 5px 17px #f0592f;
   opacity: 0; /* so we can animate transition to visible */

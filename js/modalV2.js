@@ -142,8 +142,10 @@
     // Below line of code breaks when adding parameter.  Use above method instead.
     // dynamics.setTimeout(toggleClasses(modalBg), 450); 
     
-    // Turn off the Y-scrollbar on the ModalBg
+    // Turn off the Y-scrollbar on the ModalBg and shift NavBar back 
     dynamics.setTimeout(function () {
+      var navBar = select(".navbar");
+      navBar.style.marginRight = '';
       modalBg.style.overflowY='';
       //put body scroll back
       document.body.style.paddingRight = '';
@@ -167,11 +169,13 @@
     btn.onclick = function showModal() {
       var modalDataAttribute = btn.getAttribute('data-xmodal-target');
       var modal = document.getElementById(modalDataAttribute);
-      var modalBg = modal.parentElement;
-      document.body.style.overflow = 'hidden'; 
-      document.body.style.paddingRight = '17px'; // placeholder for scrollbar
+      var modalBg = modal.parentElement.parentElement;
+      // var modalBg = modal.parentElement.parentElement;
+      var navBar = select(".navbar");
       modalBg.style.overflowY='auto';
-      // document.body.style.height = '100%'; // ADD THIS LINE
+      navBar.style.marginRight = '17px';         // placeholder for modal scrollbar
+      document.body.style.paddingRight = '17px'; // placeholder for modal scrollbar
+      document.body.style.overflow = 'hidden'; 
       toggleClass(modalBg, 'is-active'); // display modal background
       fadeInModalBg(modalBg); 
       /* delay modal animation to allow time for background fade in */
@@ -191,7 +195,7 @@
   closeBtns.forEach(function addCloseclickEvent(btn) {
     btn.onclick = function setupHideModal() {
       var modal = closestEl(btn, '.xmodal-content');
-      var modalBg = modal.parentElement;
+      var modalBg = modal.parentElement.parentElement;
       hideModal(modalBg, modal);
     };
   });
@@ -202,7 +206,7 @@
     //alert(event.target.className);  
     if (event.target.className === 'xmodal-bg is-active') {
       var modalBg = event.target;
-      var modal = modalBg.firstElementChild;
+      var modal = modalBg.firstElementChild.firstElementChild;
       hideModal(modalBg, modal);
     } /*else { alert(event.target.className);*/
     /*console.log('not modalBg',event.target);*/
