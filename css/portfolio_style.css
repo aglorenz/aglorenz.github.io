@@ -114,20 +114,21 @@ button:hover {
 }*/
 
 .xmodal-bg {
-  width: 100%;
+  /* width: 100%; */
   position: fixed;
   top: 0; 
   right: 0;
   bottom: 0;
   left: 0;
-  padding-top:77px;
-  display: none;
-  justify-content: center;
-  align-items: center;
+  z-index: 1050;
+  /* padding-top:77px; */
+  /* justify-content: center; */
+  /* align-items: center; */
   background: rgba(0, 0, 0, .35 );  
   opacity: 0;
+  text-align: center;
+  display: none;
   pointer-events: none;
-  z-index: 1050;
 /*
   -webkit-transition: background .5s ease-out;
   -moz-transition: background .5s ease-out;
@@ -139,21 +140,35 @@ button:hover {
 .xmodal-bg.is-active {
   pointer-events: auto;
   display: flex;
+  flex-wrap: wrap;
+}
+
+.xmodal-container {
+  width: 600px;
+  margin: 87px auto 0px;
+  padding-bottom: 30px;
+
+  /* margin-top: 87px; */
+  /* margin-bottom: 30px; */
+  /* margin: auto; */
+  /* position: relative; */
 }
 
 /* using 'x'modal prevents conflict with Bootstrap modal styling. 
   I tried to build a custom Bootstrap import on their website with no modal features but was unsuccessful. May try again another day */
-.xmodal-content {  /* Used by x-men x-people */
+.xmodal-content {  /* Used by x-men x-women x-people x-lovers etc*/
   width: 600px;
+  margin: 87px auto 0px;
+  padding-bottom: 30px;
   /* max-height: 100%; */
   background-color: #fff;
   padding: 1em 2em;
   border-radius: 0.5em;
-  text-align: center;
+  /* text-align: center; */
   font-size: 14px;
   line-height: 1.5;
   position: relative;
-  top: 57px;
+  /* top: 57px; */
   box-shadow: 5px 5px 17px #f0592f;
   opacity: 0; /* so we can animate transition to visible */
   }
