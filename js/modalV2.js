@@ -9,7 +9,7 @@
 //    Close modal on ouside click and fix to work on Safari
 
 // Original inspiration for modal animation by Phillip Rappold https://codepen.io/rppld/pen/vOvdyQ
-// Original code for multiple modals found on https://jsfiddle.net/2kmvktpj/ 
+// Original code example for multiple modals found on https://jsfiddle.net/2kmvktpj/ 
 //  pointed to by Paul_Wilkins on Stack Overflow at 
 //  https://www.sitepoint.com/community/t/how-to-get-this-script-to-work-for-multiple-modal-popups/252443/11
 
@@ -157,7 +157,6 @@
     // document.body.style.height = 'auto'; // ADD THIS LINE
   }
 
-
   //----------------  Event Listeners -----------------------//
 
   ///////////////////////////////
@@ -175,6 +174,7 @@
       var modalBg = closestEl(modal, '.xmodal-bg' );
       // var modalBg = modal.parentElement.parentElement; // use closestEl instead
       var navBar = select(".navbar");
+      // consider making next 4 into a shift function?
       modalBg.style.overflowY='auto';
       navBar.style.marginRight = '17px';         // placeholder for modal scrollbar
       document.body.style.paddingRight = '17px'; // placeholder for modal scrollbar

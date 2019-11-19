@@ -104,20 +104,21 @@ button:hover {
   text-align: center;
   display: none;
   pointer-events: none;
-/*
+  overflow: hidden;
+  /*
   -webkit-transition: background .5s ease-out;
   -moz-transition: background .5s ease-out;
   -o-transition: background .5s ease-out;
   transition: background .5s ease-out;
-*/
+  */
 }
 
 .xmodal-bg.is-active {
-  pointer-events: auto;
   display: flex;
-  align-items: flex-start;  /* Y axis when flex-direction: row*/
-  justify-content: center;  /* X axis when flex-direction: row*/
-  flex-wrap: wrap;
+  align-items: flex-start;  /* Y axis when flex-direction: row */
+  justify-content: center;  /* X axis when flex-direction: row */
+  pointer-events: auto;
+  /* flex-wrap: wrap; */  /* not needed for one item in flex container */
 }
 
 .xmodal-container {
