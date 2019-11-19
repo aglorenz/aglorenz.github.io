@@ -173,14 +173,13 @@
       var modalDataAttribute = btn.getAttribute('data-xmodal-target');
       var modal = document.getElementById(modalDataAttribute);
       var modalBg = closestEl(modal, '.xmodal-bg' );
-      // var modalBg = modal.parentElement.parentElement;
+      // var modalBg = modal.parentElement.parentElement; // use closestEl instead
       var navBar = select(".navbar");
       modalBg.style.overflowY='auto';
       navBar.style.marginRight = '17px';         // placeholder for modal scrollbar
       document.body.style.paddingRight = '17px'; // placeholder for modal scrollbar
       document.body.style.overflow = 'hidden'; 
       toggleClasses(modal); // display modal background, mark modal as active
-      // toggleClasstoggleClass(modalBg, 'is-active'); // display modal background
       fadeInModalBg(modalBg); 
       /* delay modal animation to allow time for background fade in */
       dynamics.setTimeout(bounceInModal(modal), 150);
