@@ -21,7 +21,10 @@
   // e.g., can't use undeclared vars
   'use strict'; 
   
-  function toggleClasses(modalBg) {
+  function toggleClasses(modal) {
+  toggleClass(modal, 'is-active'); // mark modal for easy locating / or unmark it
+  // search upwards in DOM to find modal Bg
+  var modalBg = closestEl(modal, '.xmodal-bg' );
   toggleClass(modalBg, 'is-active'); // hide/display modal background
   }
 
@@ -137,7 +140,7 @@
     slideOutModal(modal);
     /* Pause to allow modal to slide down before setting modalBg to display: none */
     dynamics.setTimeout(function () {
-      toggleClasses(modalBg);
+      toggleClasses(modal);
     }, 450);
     // Below line of code breaks when adding parameter.  Use above method instead.
     // dynamics.setTimeout(toggleClasses(modalBg), 450); 
@@ -169,14 +172,15 @@
     btn.onclick = function showModal() {
       var modalDataAttribute = btn.getAttribute('data-xmodal-target');
       var modal = document.getElementById(modalDataAttribute);
-      var modalBg = modal.parentElement.parentElement;
+      var modalBg = closestEl(modal, '.xmodal-bg' );
       // var modalBg = modal.parentElement.parentElement;
       var navBar = select(".navbar");
       modalBg.style.overflowY='auto';
       navBar.style.marginRight = '17px';         // placeholder for modal scrollbar
       document.body.style.paddingRight = '17px'; // placeholder for modal scrollbar
       document.body.style.overflow = 'hidden'; 
-      toggleClass(modalBg, 'is-active'); // display modal background
+      toggleClasses(modal); // display modal background, mark modal as active
+      // toggleClasstoggleClass(modalBg, 'is-active'); // display modal background
       fadeInModalBg(modalBg); 
       /* delay modal animation to allow time for background fade in */
       dynamics.setTimeout(bounceInModal(modal), 150);
@@ -195,7 +199,7 @@
   closeBtns.forEach(function addCloseclickEvent(btn) {
     btn.onclick = function setupHideModal() {
       var modal = closestEl(btn, '.xmodal-content');
-      var modalBg = modal.parentElement.parentElement;
+      var modalBg = closestEl(modal, '.xmodal-bg' );
       hideModal(modalBg, modal);
     };
   });
@@ -206,7 +210,8 @@
     //alert(event.target.className);  
     if (event.target.className === 'xmodal-bg is-active') {
       var modalBg = event.target;
-      var modal = modalBg.firstElementChild.firstElementChild;
+      var modal = select('.xmodal-content.is-active');
+      // var modal = modalBg.firstElementChild.firstElementChild;
       hideModal(modalBg, modal);
     } /*else { alert(event.target.className);*/
     /*console.log('not modalBg',event.target);*/

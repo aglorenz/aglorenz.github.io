@@ -22,7 +22,7 @@ function toggleClass(elem, className) {
 // select
 function select(selector) {
   var elements = document.querySelectorAll(selector);
-  console.log('elements = ',elements);
+  // console.log('elements = ',elements);
 
   if (elements.length > 1) {
     return elements;
