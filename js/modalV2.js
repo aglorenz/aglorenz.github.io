@@ -181,6 +181,7 @@
       document.body.style.overflow = 'hidden'; 
       toggleClasses(modal); // display modal background, mark modal as active
       fadeInModalBg(modalBg); 
+      modalBg.scrollTop = 0;  // always start scrolled to the top
       /* delay modal animation to allow time for background fade in */
       dynamics.setTimeout(bounceInModal(modal), 150);
       dynamics.setTimeout(bounceInModalChildren(modal.children), 150);
