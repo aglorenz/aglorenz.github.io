@@ -176,8 +176,8 @@
       var navBar = select(".navbar");
       // consider making next 4 into a shift function?
       modalBg.style.overflowY='auto';
-      navBar.style.marginRight = '17px';         // placeholder for modal scrollbar
-      document.body.style.paddingRight = '17px'; // placeholder for modal scrollbar
+      // navBar.style.marginRight = '17px';         // placeholder for modal scrollbar
+      // document.body.style.paddingRight = '17px'; // placeholder for modal scrollbar
       document.body.style.overflow = 'hidden'; 
       toggleClasses(modal); // display modal background, mark modal as active
       fadeInModalBg(modalBg); 
