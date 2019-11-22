@@ -118,8 +118,26 @@ button:hover {
   align-items: flex-start;  /* Y axis when flex-direction: row */
   justify-content: center;  /* X axis when flex-direction: row */
   pointer-events: auto;
+  /* overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none; */
   /* flex-wrap: wrap; */  /* not needed for one item in flex container */
 }
+/* .xmodal-bg::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+} */
+/* 
+.scr-bar-hide {
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scr-bar-hide::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+} */
 
 .xmodal-container {
   width: 600px;
