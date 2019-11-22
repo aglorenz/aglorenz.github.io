@@ -104,7 +104,7 @@ button:hover {
   text-align: center;
   display: none;
   pointer-events: none;
-  overflow: hidden;
+  /* overflow: hidden; */
   /*
   -webkit-transition: background .5s ease-out;
   -moz-transition: background .5s ease-out;
@@ -120,8 +120,8 @@ button:hover {
   pointer-events: auto;
   /* overflow-y: scroll;
   scrollbar-width: none;
-  -ms-overflow-style: none; */
-  /* flex-wrap: wrap; */  /* not needed for one item in flex container */
+  -ms-overflow-style: none; */ 
+  flex-wrap: wrap;  /* not needed if one item in flex container */
 }
 /* .xmodal-bg::-webkit-scrollbar {
   width: 0;
