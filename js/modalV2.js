@@ -164,9 +164,9 @@
   var modalBtns = document.querySelectorAll('.xmodal-open');
 
   // Add a 'click' event listener for each open modal button
-  // The function called by event listener, retrieves the unique 
+  // The function, called by event listener, retrieves the unique 
   // value associated with the custom attribute 'data-xmodal-target'
-  // This value identifies the modal which is then displayed.
+  // This value identifies the modal which is then displayed on button click
   modalBtns.forEach(function addBtnClickEvent(btn) {
     btn.onclick = function showModal() {
       var modalDataAttribute = btn.getAttribute('data-xmodal-target');
@@ -174,7 +174,7 @@
       var modalBg = closestEl(modal, '.xmodal-bg' );
       // var modalBg = modal.parentElement.parentElement; // use closestEl instead
       var navBar = select(".navbar");
-      // consider making next 4 into a shift function?
+      // consider making next 4 into a shift function?  also how to make scroll bar invisible when on IOS 
       modalBg.style.overflowY='auto';
       navBar.style.marginRight = '17px';         // placeholder for modal scrollbar
       document.body.style.paddingRight = '17px'; // placeholder for modal scrollbar
@@ -183,8 +183,14 @@
       fadeInModalBg(modalBg); 
       modalBg.scrollTop = 0;  // always start scrolled to the top
       /* delay modal animation to allow time for background fade in */
-      dynamics.setTimeout(bounceInModal(modal), 150);
-      dynamics.setTimeout(bounceInModalChildren(modal.children), 150);
+
+      dynamics.setTimeout(function () {
+		  bounceInModal(modal);
+	  }, 150);
+      dynamics.setTimeout(function () {
+		  bounceInModalChildren(modal.children);
+	  }, 150);	  
+      // dynamics.setTimeout(bounceInModalChildren(modal.children), 150); // this causes an error in dynamics.js: "timeout.fn is not a function"
     };
   });
 
