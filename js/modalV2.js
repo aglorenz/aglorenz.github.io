@@ -15,6 +15,7 @@
 
 //alert('modalV2.js loaded');
 
+
 //Imediately Invoked Function Expression
 (function () { 
   // execute code in srict mode.
@@ -163,10 +164,10 @@
   // Get a list of all buttons with class='xmodal-open'
   var modalBtns = document.querySelectorAll('.xmodal-open');
 
-  // Add a 'click' event listener for each open modal button
+  // Add a 'click' event listener for each button that opens a modal
   // The function, called by event listener, retrieves the unique 
   // value associated with the custom attribute 'data-xmodal-target'
-  // This value identifies the modal which is then displayed on button click
+  // This value identifies the modal which is then displayed opon button click
   modalBtns.forEach(function addBtnClickEvent(btn) {
     btn.onclick = function showModal() {
       var modalDataAttribute = btn.getAttribute('data-xmodal-target');
@@ -176,9 +177,12 @@
       var navBar = select(".navbar");
       // consider making next 4 into a shift function?  also how to make scroll bar invisible when on IOS 
       modalBg.style.overflowY = 'auto';
-      // navBar.style.marginRight = '17px';         // placeholder for modal scrollbar
-      // document.body.style.paddingRight = '17px'; // placeholder for modal scrollbar
+
+	  var scrollWidth = (window.innerWidth - document.documentElement.clientWidth);
+      navBar.style.marginRight = scrollWidth + 'px';         // placeholder for modal scrollbar
+      document.body.style.paddingRight = scrollWidth + 'px'; // placeholder for modal scrollbar
       document.body.style.overflow = 'hidden'; 
+
       toggleClasses(modal); // display modal background, mark modal as active
       fadeInModalBg(modalBg); 
       modalBg.scrollTop = 0;  // always start scrolled to the top
@@ -223,3 +227,26 @@
     /*console.log('not modalBg',event.target);*/
   }
 }());
+
+console.log("Hi")
+var myinnerWidth=(window.innerWidth);  //907
+var fulllWidth = $(window).width();  //890
+console.log(myinnerWidth - fulllWidth);
+
+// function getScrollbarWidth(el) {
+    // return el.getBoundingClientRect().width - el.scrollWidth;
+// };
+
+// function scrollingElement() {
+  // return document.scrollingElement || document.documentElement;
+// }
+
+
+var element = document.getElementsByTagName("html")[0];
+console.log(element.scrollTop);
+console.log(element.offsetWidth); // all 3 are 890
+console.log(element.clientWidth);
+console.log(element.scrollWidth);
+
+console.log(window.innerWidth);
+console.log(document.documentElement.clientWidth);
