@@ -175,13 +175,18 @@
       var modalBg = closestEl(modal, '.xmodal-bg' );
       // var modalBg = modal.parentElement.parentElement; // use closestEl instead
       var navBar = select(".navbar");
-      // consider making next 4 into a shift function?  also how to make scroll bar invisible when on IOS 
-      modalBg.style.overflowY = 'auto';
-
-	  var scrollWidth = (window.innerWidth - document.documentElement.clientWidth);
-      navBar.style.marginRight = scrollWidth + 'px';         // placeholder for modal scrollbar
-      document.body.style.paddingRight = scrollWidth + 'px'; // placeholder for modal scrollbar
-      document.body.style.overflow = 'hidden'; 
+      // consider making next 4 into a shift function? 
+      modalBg.style.overflowY = 'auto'; // allow modal to scroll if viewport is too narrow
+       
+      // Here we want to prevent scrolling of the body when the modal is up and prevent left-right movement
+      // of the body and navbar when removing the body scrollbar.
+      // Determine width of vertical scrollbar on body. Will be diff on Windows vs IOS so can't used fixed width
+      // Insert right padding of same width when turning off vertical body scrollbar
+      
+	    var vScrollWidth = (window.innerWidth - document.documentElement.clientWidth);
+      navBar.style.marginRight = vScrollWidth + 'px';         // padding place for modal scrollbar
+      document.body.style.paddingRight = vScrollWidth + 'px'; // placeholder for modal scrollbar
+      document.body.style.overflow = 'hidden';                // prevent body from scrolling
 
       toggleClasses(modal); // display modal background, mark modal as active
       fadeInModalBg(modalBg); 
@@ -228,10 +233,10 @@
   }
 }());
 
-console.log("Hi")
+// Setup to accomodate scrollbar for different browsers
 var myinnerWidth=(window.innerWidth);  //907
 var fulllWidth = $(window).width();  //890
-console.log(myinnerWidth - fulllWidth);
+//console.log(myinnerWidth - fulllWidth);
 
 // function getScrollbarWidth(el) {
     // return el.getBoundingClientRect().width - el.scrollWidth;
