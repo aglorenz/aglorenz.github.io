@@ -175,7 +175,7 @@
       var modalBg = closestEl(modal, '.xmodal-bg' );
       // var modalBg = modal.parentElement.parentElement; // use closestEl instead
       var navBar = select(".navbar");
-      // consider making next 4 into a shift function? 
+      // consider making next 4 into a shift function?? 
       modalBg.style.overflowY = 'auto'; // allow modal to scroll if viewport is too narrow
        
       // Here we want to prevent scrolling of the body when the modal is up and prevent left-right movement
