@@ -1,0 +1,191 @@
+body {
+    background-color:#fff;
+    /* background-color:#f7b82b; */ /* gold */
+    /* background-color: #500f86; */ /* purple */
+    font-family: 'gothic_ultra_otregular';
+    margin: 0px; 
+    display: block;
+    color: gold;
+}
+
+h1 {
+    /* color:gold;   */
+    margin: auto; 
+    font-size: 100px; 
+    text-shadow: 5px 5px #000;
+    text-align: center; 
+    line-height: .9em;
+}
+/* ---------------------------------------------------------------
+                        HEADER STYLING 
+   --------------------------------------------------------------- */
+.header-bg {
+    background-color: #500f86;
+    padding-top: 10px;
+    height: 400px;
+    box-shadow: 0 0 5px 3px;
+    /* to show gold halo on bottom of header. Otherwise obscured by .main Brings  */    
+      position: relative;
+      z-index: 200;  
+}
+
+.wings-bg {
+    background: url('../img/wings1.png');
+    margin: 10px;
+    background-repeat: space; /* repeat and space images horizontally; don't show partial images */
+    background-size: contain;  /* causes image to shrink and fit (if needed) when viewport shrinks */
+    background-position: center; 
+}
+
+.pizza-halo {
+    background-color: #fff; /* in case background image can't be found */
+    height: 198px;   /* affects horizontal positioning of the wings */
+    margin: 0 auto;
+    background: url('../img/halo.png');
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: contain;
+}
+
+/* ---------------------------------------------------------------
+                        MAIN STYLING 
+   --------------------------------------------------------------- */
+
+main {
+    background: url('../img/pizza4.jpg') repeat center ;
+    /* Alternate way (instead of z-index) to get gold halo on bottom of header */
+/*    box-shadow: inset -4px 9px 9px -4px gold;*/
+    background-size: 1600px;
+    height: auto;
+    /* Push .main z-index below that of .header to show gold halo */
+      position: relative;
+      z-index: 100;  
+
+}
+
+input {
+    margin-left: 7px;
+}
+
+label {
+	display: block;
+}
+
+.menu-flx {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    margin: 0% auto;
+    opacity: 0.90;
+}
+
+.menu-cell-hdr {
+    text-align: center; 
+    margin: 0 auto;
+    padding-top: 8px;
+    text-shadow: 2px 3px #000;
+    font-size: 38px;
+}
+
+.menu-cell  {
+    width: 145px;
+    height: 253px;
+    margin: 5px;
+    font-size: 24px;
+    background-color: #500f86;
+    text-shadow: 1.5px 1.5px #000;
+    box-shadow: 0 0 5px 3px;
+    border-radius: 0.5em;
+}
+
+.button {
+    width: 145px;
+    height: auto;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #500f86;
+    font-size: 22px;
+    box-shadow: 0 0 5px 3px;
+    border-radius: 0.5em;
+    text-align: center;
+    line-height: .1em;
+    text-shadow: 1.5px 3.5px #000;
+    transition-duration: .4s; 
+}
+
+
+.button:hover {
+    text-shadow: none;
+    color: #500f86;
+    background-color: gold;
+}
+
+#cart {
+    width: 300px; 
+    opacity: 0;   /* set to .90 for debug and layout */
+    box-shadow: 0 0 5px 3px; 
+    border-radius: 0.5em; 
+}
+
+.cart-cell {
+    background-color: #500f86;
+    width: 140px;
+    padding-left: 10px;
+}
+
+#itm-hdr {
+    font-size: 28px;
+    line-height: 0;
+    text-shadow: 2px 3px #000;
+    border-top-left-radius: 0.5em;
+}
+
+#subtot-hdr {
+    font-size: 28px;
+    line-height: 0;
+    text-shadow: 2px 3px #000;
+    border-top-right-radius: 0.5em;
+}
+
+#itm-sel {
+    font-size: 24px;
+    text-shadow: 1.5px 1.5px #000;
+}
+
+#itm-prc {
+    font-size: 24px;
+    text-shadow: 1.5px 1.5px #000;
+}
+
+#tot-prc-hdr {
+    font-size: 28px;
+    text-shadow: 2px 3px #000;
+    border-bottom-left-radius: 0.5em;
+}
+
+#tot-prc {
+    font-size: 28px;
+    text-shadow: 2px 3px #000;
+    border-top-color: #000;
+    border-top-width: 2px;
+    border-bottom-right-radius: 0.5em;
+}
+
+/* ---------------------------------------------------------------
+            FONT from https://www.fontsquirrel.com/
+   --------------------------------------------------------------- */
+
+@font-face {
+    font-family: 'gothic_ultra_otregular';
+    src: url('gothic_ultra_ot-webfont.eot');
+    src: url('gothic_ultra_ot-webfont.eot?#iefix') format('embedded-opentype'),
+            url('gothic_ultra_ot-webfont.woff2') format('woff2'),
+            url('gothic_ultra_ot-webfont.woff') format('woff'),
+            url('gothic_ultra_ot-webfont.ttf') format('truetype'),
+            url('gothic_ultra_ot-webfont.svg#gothic_ultra_otregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

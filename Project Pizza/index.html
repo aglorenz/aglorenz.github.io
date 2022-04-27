@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pizza Heaven</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/pizza.css" media="screen"/>
+		<script src="JS/pizza_heaven.js"defer></script>  
+    
+    <!-- ****** faviconit.com favicons ****** -->
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+ 
+    <!----------------------------- HEADER --------------------------------->
+    <header class=header-bg>
+        <div class=wings-bg> 
+            <div class="pizza-halo"></div>
+            <h1><strong>PIZZA HEAVEN</strong></h1>
+        </div>
+    </header>
+    
+    <!----------------------------- MAIN MENU ----------------------------------->
+    <main>
+        <br>
+        <h1>Create Your Pizza Below!</h1>
+        <form id="menuForm" class="menu-flx">
+            <div class="menu-cell">
+                <h2 class="menu-cell-hdr">Size:</h2>
+                <label><input type="radio" name="size" onclick="processOrder()" value="Personal" checked> Personal</label>
+                <label><input type="radio" name="size" onclick="processOrder()" value="Medium"> Medium</label>
+                <label><input type="radio" name="size" onclick="processOrder()" value="Large"> Large</label>
+                <label><input type="radio" name="size" onclick="processOrder()" value="Extra Large"> Extra Large</label>
+            </div>
+            <div class="menu-cell">
+                <h2 class="menu-cell-hdr">Crust:</h2>
+                <label><input type="radio" name="crust" onclick="processOrder()" value="Plain" checked> Plain</label>
+                <label><input type="radio" name="crust" onclick="processOrder()" value="Garlic Butter"> Garlic Butter</label>
+                <label><input type="radio" name="crust" onclick="processOrder()" value="Cheese Stuffed"> Cheese Stuffed</label>
+                <label><input type="radio" name="crust" onclick="processOrder()" value="Spicy"> Spicy</label>
+                <label><input type="radio" name="crust" onclick="processOrder()" value="House Special"> House Special</label>
+            </div>
+            <div class="menu-cell">
+                <h2 class="menu-cell-hdr">Sauce:</h2>
+                <label><input type="radio" name="sauce" onclick="processOrder()" value="Marinara Sauce" checked> Marinara Sauce</label>
+                <label><input type="radio" name="sauce" onclick="processOrder()" value="White Sauce"> White Sauce</label>
+                <label><input type="radio" name="sauce" onclick="processOrder()" value="BBQ Sauce"> BBQ Sauce</label>
+                <label><input type="radio" name="sauce" onclick="processOrder()" value="No Sauce"> No Sauce</label>
+            </div>
+            <div class="menu-cell">
+                <h2 class="menu-cell-hdr">Cheese:</h2>
+                <label><input type="radio" name="cheese" onclick="processOrder()" value="No Cheese" checked> No Cheese</label>
+                <label><input type="radio" name="cheese" onclick="processOrder()" value="Regular Cheese"> Regular Cheese</label>
+                <label><input type="radio" name="cheese" onclick="processOrder()" value="Extra Cheese"> Extra Cheese</label>
+            </div>
+            <div class="menu-cell">
+                <h2 class="menu-cell-hdr">Meats:</h2>
+                <label><input type="checkbox" name="meat" onclick="processOrder()" value="Pepperoni"> Pepperoni</label>
+                <label><input type="checkbox" name="meat" onclick="processOrder()" value="Sausage"> Sausage</label>
+                <label><input type="checkbox" name="meat" onclick="processOrder()" value="Canadian Bacon"> Canadian Bacon</label>
+                <label><input type="checkbox" name="meat" onclick="processOrder()" value="Ground Beef"> Ground Beef</label>
+                <label><input type="checkbox" name="meat" onclick="processOrder()" value="Anchovy"> Anchovy</label>
+                <label><input type="checkbox" name="meat" onclick="processOrder()" value="Chicken"> Chicken</label>
+            </div>
+            <div class="menu-cell">
+                <h2 class="menu-cell-hdr">Veggies:</h2>
+                <label><input type="checkbox" name="veggies" onclick="processOrder()" value="Tomatoes"> Tomatoes</label>
+                <label><input type="checkbox" name="veggies" onclick="processOrder()" value="Onions"> Onions</label>
+                <label><input type="checkbox" name="veggies" onclick="processOrder()" value="Olives"> Olives</label>
+                <label><input type="checkbox" name="veggies" onclick="processOrder()" value="Green Peppers"> Green Peppers</label>
+                <label><input type="checkbox" name="veggies" onclick="processOrder()" value="Mushrooms"> Mushrooms</label>
+                <label><input type="checkbox" name="veggies" onclick="processOrder()" value="Pineapple"> Pineapple</label>
+                <label><input type="checkbox" name="veggies" onclick="processOrder()" value="Spinach"> Spinach</label>
+                <label><input type="checkbox" name="veggies" onclick="processOrder()" value="Jalapeno"> Jalapeno</label>
+            </div>
+        </form>
+        <br>
+
+        <!----------------------------- CONTROLS ----------------------------------->
+        <div class="menu-flx">
+            <div class="button" onclick="processOrder()">
+                <p><strong>PLACE ORDER</strong></p>
+            </div>
+            <div class="button" onclick="clearSelections()">
+                <p><strong>CANCEL</strong></p>
+            </div>            
+        </div>
+        <br>
+        
+        <!----------------------------- CART ----------------------------------->
+            <div id="cart" class="menu-flx" >
+                <div id="itm-hdr" class="cart-cell">
+                    <h3>Selections</h3>
+                </div>
+                <div id="subtot-hdr" class="cart-cell">
+                    <h3>Subtotal</h3>
+                </div>
+                <div id="itm-sel" class="cart-cell" >
+                    <!-- placeholders -->
+                    <!-- <br> -->
+                    <!-- for layout -->
+                    <!-- <br> -->
+                    <!-- purposes -->
+                    <!-- <br> -->
+                </div>
+                <div id="itm-prc" class="cart-cell">
+                    <!-- 1 -->
+                    <!-- <br> -->
+                    <!-- 1 -->
+                    <!-- <br> -->
+                    <!-- 1 -->
+                    <!-- <br> -->
+                </div>
+                <div id="tot-prc-hdr" class="cart-cell">
+                    <h3>Total Price:</h3>
+                </div>
+                <div id="tot-prc" class="cart-cell">
+                    <h3></h3>
+                </div>
+            </div>
+        <br>
+</main>
+  
+</body>
+</html>
