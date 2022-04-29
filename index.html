@@ -195,8 +195,8 @@
             <h4 class="cell-title">
               <strong>Pizza Heaven</strong>
             </h4>
-            <button data-xmodal-target="cSharpModal" class="xmodal-open btn-orng">About</button>
-            <a href="./Project Pizza/index.html"> <button class="btn-orng">View it</button> </a>
+            <button data-xmodal-target="pizzaModal" class="xmodal-open btn-orng">About</button>
+            <a href="./Project Pizza/index.html" target="_blank"> <button class="btn-orng">View it</button> </a>
         </div>
         <br>
         <br>
@@ -235,8 +235,17 @@
         <br>
         <br>
       </section>  
+      <!------------------------------------------------------------------------------->
+      <!------------------------------------------------------------------------------->
 
       <!-- Modals go here so they can be in their own stacking context (for z-index) -->
+
+      <!------------------------------------------------------------------------------->
+      <!------------------------------------------------------------------------------->
+
+      <!------------------------------------------------------------------------------->
+      <!--                            Skills Modals                                  -->
+      <!------------------------------------------------------------------------------->
 
       <!------------------------------- Web Development -------------------------------->
       <!-- onclick="" needed to register click for Safari -->
@@ -419,6 +428,42 @@
         </div>  <!-- xmodal-container -->
       </div> <!-- xmodal-bg C# -->
 
+      <!------------------------------------------------------------------------------->
+      <!--                            Project Modals                                  -->
+      <!------------------------------------------------------------------------------->
+
+
+      <!------------------------------ Pizza Project  -------------------------->
+
+      <!-- onclick="" needed to register click for Safari -->
+      <div class="xmodal-bg" onclick="" >
+        <div class="xmodal-container">
+          <div id="pizzaModal" class="xmodal-content">
+            <span class="xclose xmodal-close">&times;</span>
+            <div class="xmodal-hdr">
+              <img src="./Project Pizza/img/halo.png" alt="Pizza Halo" class="cell-icon">
+            </div>
+            <h1 class="xmodal-body-title">Pizza Heaven</h1>
+            <div class="xmodal-body">  <!-- separate divs needed for object animation separation -->
+              <p class="xmodal-body-txt">A fun and over-the-top styled pizza menu.</p>
+            </div>
+            <div class="xmodal-body">
+              <h5 class=xmodal-list-hdr>Notes:</h5>
+              <ul class=xmodal-body-txt>
+                <li>It's Responsive. Try expanding and shrinking the window and watch the wing icons.</li>                
+								<li>Menu tiles adjust to the size of the viewport.</li>
+								<li>Clicking on a menu item adds it to the receipt and recalculates the receipt total.</li>								
+								<li>Works on an Iphone.</li>
+								<li>Makes you hungry.</li>
+							</ul>
+						</div>
+            <div class="xmodal-footer">
+              <button class="xmodal-close">Close</button>
+              <br>
+            </div>
+          </div> <!-- xmodal-content -->
+        </div>  <!-- xmodal-container -->
+      </div> <!-- xmodal-bg C# -->
 
     </main>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
