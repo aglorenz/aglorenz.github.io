@@ -130,10 +130,11 @@ function processOrder() {
     itemArray = document.getElementsByName("meat");
     for (var i = 0; i < itemArray.length; i++) {
 		meat = itemArray[i].value;
-        if (itemArray[i].checked)  
+        if (itemArray[i].checked)  {
 			// meat, price -- first one free
 			(meatCount < 1 ) ? namePriceArray.push([meat, 0]) : namePriceArray.push([meat, menuDict.meatDict[meat]]); 
-        meatCount++;
+            meatCount++;
+        }
     }
     
     //---------------------------------------------
@@ -143,10 +144,11 @@ function processOrder() {
     itemArray = document.getElementsByName("veggies");
     for (var i = 0; i < itemArray.length; i++) {
 		veggie = itemArray[i].value;
-        if (itemArray[i].checked)
+        if (itemArray[i].checked) {
 			// veggie, price ==- first one free
 			(veggieCount < 1 ) ? namePriceArray.push([veggie, 0]) : namePriceArray.push([veggie, menuDict.veggieDict[veggie]]);
-		veggieCount++;
+		    veggieCount++;
+        }
     }
     
     //---------------------------------------------
