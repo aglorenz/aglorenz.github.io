@@ -68,14 +68,22 @@ MAIN STYLING
 button {
   font-size: 1.25em;
   font-weight: bold;
-  background-color: #1990bf;
   border: none;
   padding: 0.2em 1em;
-  color: #fff;
   box-shadow: 0 0 0 2px #000 inset;
   border-radius: 0.25em;
   cursor: pointer;
   transition: background 0.4s ease, color 0.4s ease;
+}
+
+.btn-blu {
+  background-color: #1990bf;
+  color: #fff;
+}
+
+.btn-orng {
+  background-color: #f0592f;
+  color: #fff;
 }
 
 button:hover {
