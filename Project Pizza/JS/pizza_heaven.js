@@ -21,46 +21,52 @@ function processOrder() {
 	
 	var menuDict = {
 		sizeDict: {
-			Personal:		6,
-			Medium:			10,
-			Large:			14,
-			"Extra Large":	16		
+			Personal:       6,
+			Medium:         10,
+			Large:          14,
+			"Extra Large":  16,	
 		},
 		crustDict: {
-			Plain:				0,
-			"Garlic Butter": 	0,
-			"Cheese Stuffed": 	3,
-			Spicy:				0,
-			"House Special": 	0
+			Plain:              0,
+			"Garlic Butter":    0,
+			"Cheese Stuffed":   3,
+			Spicy:              0,
+			"Gluten Free":      2,
 		},
 		sauceDict:  {
-			"Marinara Sauce":	0,
-			"White Sauce":		0,
-			"BBQ Sauce": 		0,
-			"No Sauce":			0
+			"No Sauce":         0,
+            "Marinara Sauce":   0,
+			"Pesto Sauce":      0,
+            "BBQ Sauce":        0,
+            "Fresh Garlic":     0,
+            "Red Peppr Flakes": 0,
 		},
 		cheeseDict: {
-			"No Cheese":		0,
-			"Regular Cheese":	0,
-			"Extra Cheese":		3
+			"No Cheese":        0,
+			Mozzerella:         0,
+			Provolone:          0,
+			Goat:               0,
+            Daiya:              1,
+			"Extra Cheese":     1,
+            Parmesan:           0,
 		},
 		meatDict: {
-			Pepperoni:			1,
-			Sausage:			1,
-			"Canadian Bacon":	1,
-			"Ground Beef":		1,
-			Anchovy:			1,
-			Chicken:			1
+			Pepperoni:          1,
+			Sausage:            1,
+			"Canadian Bacon":   1,
+			"Ground Beef":      1,
+			Chicken:            1,
+			"Smoked Chicken":   1,
 		},
 		veggieDict: {
-			Tomatoes:			1,
-			Onions:				1,
-			Olives:				1,
-			"Green Peppers":	1,
-			Mushrooms:			1,
-			Pineapple:			1,
-			Spinach:			1,
-			Jalapeno:			1
+			Tomatoes:           1,
+			"Red Onions":       1,
+			Olives:             1,
+			"Green Peppers":    1,
+			Mushrooms:          1,
+			Pineapple:          1,
+			Spinach:            1,
+			Artichoke:          1,
 		}
 	}
 	          
@@ -107,7 +113,6 @@ function processOrder() {
         if (itemArray[i].checked) {
 			sauce = itemArray[i].value
             namePriceArray.push([sauce, menuDict.sauceDict[sauce]]); // sauce, price 
-            {break} // only 1 choice, so break when the first is found
         }
     }
     
@@ -119,7 +124,6 @@ function processOrder() {
         if (itemArray[i].checked) {
 			cheese = itemArray[i].value;
             namePriceArray.push([cheese, menuDict.cheeseDict[cheese]]); // cheese, price
-            {break} // only 1 choice, so break when the first is found
         }
     }
 
