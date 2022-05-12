@@ -169,21 +169,21 @@ function processOrder() {
 // Checks if No Cheese and Extra Cheese are selected.  If so, cancel the extra 
 // cheese selection and show a tooltip telling use to select a cheese first 
 function validateCheese() {
-    let noCheese = document.getElementById("no-cheese");
-    let extraCheese = document.getElementById("extra-cheese");
-    let toolText = document.getElementById("cheese-tip")
+    var noCheese = document.getElementById("no-cheese");
+    var extraCheese = document.getElementById("extra-cheese");
+    var toolText = document.getElementById("cheese-tip")
     if (noCheese.checked && extraCheese.checked) {
-        cancelExtraCheese();
-        // set tooltip visible 
+        extraCheese.checked = false;
+        // set tooltip visible for a short period
         toolText.style.visibility="visible";
         setTimeout(function () { toolText.style.visibility="hidden";}, 1700);
     }
 }
 
 // --------------------------------------------------------------------------
-// Cancel the Extra cheese selection.  Also, called when No Cheese is selected
+// Cancel the Extra cheese selection when user clicks on No Cheese
 function cancelExtraCheese() {
-    let extraCheese = document.getElementById("extra-cheese");
+    var extraCheese = document.getElementById("extra-cheese");
     extraCheese.checked = false;
 }
 
