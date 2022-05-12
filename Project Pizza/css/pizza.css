@@ -121,7 +121,7 @@ label {
     background-color: gold;
 }
 
-.tooltip .tooltiptext {
+.tool-tip .tool-tip-text {
     visibility: hidden;
     width: 120px;
     background-color: gold;
@@ -136,10 +136,6 @@ label {
     z-index: 1;
     left: 8px;
   }  
-  
-  /* .tooltip:hover .tooltiptext {
-    visibility: visible;
-  }   */
 
 /* Change cursor to point when hover over selections */  
 label, input:hover {

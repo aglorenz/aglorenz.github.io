@@ -1,10 +1,11 @@
-function processOrder() {
-    // --------------------------------------------------------------------------
-    // This function parses through the pizza menu and checks for elements
-    // checked/selected by the user, consolidate the info into a 2D array, 
-    // and displays the receipt to the user.  i.e., user selections, individual price,
-    // and total price.
 
+// --------------------------------------------------------------------------
+// This function parses through the pizza menu and checks for elements
+// checked/selected by the user, consolidate the info into a 2D array, 
+// and displays the receipt to the user.  i.e., user selections, individual price,
+// and total price.
+
+function processOrder() {
 
     //---------------------------------------------------------------------------
     // This 2D array holds list of selected pizza ingredients and prices for the 
@@ -76,7 +77,6 @@ function processOrder() {
     // Add pizza size and price to the cart
     //---------------------------------------------
     itemArray = document.getElementsByName("size");
-	
     for (var i = 0; i < itemArray.length; i++) {
         if (itemArray[i].checked) {
 			// Add the value attribute from the html radio button (which is also the pizza item name) to the list, 
@@ -165,16 +165,26 @@ function processOrder() {
     displayReceipt(namePriceArray)
 }
 
+// --------------------------------------------------------------------------
+// Checks if No Cheese and Extra Cheese are selected.  If so, cancel the extra 
+// cheese selection and show a tooltip telling use to select a cheese first 
 function validateCheese() {
     let noCheese = document.getElementById("no-cheese");
     let extraCheese = document.getElementById("extra-cheese");
-    let toolText = document.getElementsByClassName("tooltiptext")
+    let toolText = document.getElementById("cheese-tip")
     if (noCheese.checked && extraCheese.checked) {
-        extraCheese.checked = false;
+        cancelExtraCheese();
         // set tooltip visible 
-        toolText[0].style.visibility="visible";
-        setTimeout(function () { toolText[0].style.visibility="hidden";}, 1700);
+        toolText.style.visibility="visible";
+        setTimeout(function () { toolText.style.visibility="hidden";}, 1700);
     }
+}
+
+// --------------------------------------------------------------------------
+// Cancel the Extra cheese selection.  Also, called when No Cheese is selected
+function cancelExtraCheese() {
+    let extraCheese = document.getElementById("extra-cheese");
+    extraCheese.checked = false;
 }
 
 //-----------------------------------------------------------------
