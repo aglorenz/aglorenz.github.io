@@ -53,13 +53,17 @@
             </div>
             <div class="menu-cell">
                 <h2 class="menu-cell-hdr">Cheese:</h2>
-                <label><input type="radio" name="cheese" onclick="processOrder()" value="No Cheese" checked> No Cheese</label>
+                <label><input id="no-cheese" type="radio" name="cheese" onclick="processOrder()" value="No Cheese" checked> No Cheese</label>
                 <label><input type="radio" name="cheese" onclick="processOrder()" value="Mozzerella"> Mozzerella</label>
                 <label><input type="radio" name="cheese" onclick="processOrder()" value="Provolone"> Provolone</label>
                 <label><input type="radio" name="cheese" onclick="processOrder()" value="Goat"> Goat</label>
-                <label><input type="radio" name="cheese" onclick="processOrder()" value="Daiya"> Daiya </label>
-                <label><input type="checkbox" name="cheese" onclick="processOrder()" value="Extra Cheese"> Extra Cheese</label>
-                <label><input type="checkbox" name="cheese" onclick="processOrder()" value="Parmesan"> Parmesan</label>
+                <label><input type="radio" name="cheese" onclick="processOrder()" value="Cheddar"> Cheddar </label>
+                <label><input type="radio" name="cheese" onclick="processOrder()" value="Daiya"> Daiya (non-dairy) </label>
+                <label class="tooltip">
+                    <input id="extra-cheese" type="checkbox" name="cheese"  onclick="processOrder();" value="Extra Cheese">
+                     Extra Cheese
+                    <span class="tooltiptext">Select a cheese first</span>
+                </label>
             </div>
             <div class="menu-cell">
                 <h2 class="menu-cell-hdr">Meats:</h2>

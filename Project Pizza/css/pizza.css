@@ -115,12 +115,36 @@ label {
     transition-duration: .4s; 
 }
 
-
 .button:hover {
     text-shadow: none;
     color: #500f86;
     background-color: gold;
 }
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: gold;
+    color: #500f86;
+    text-align: center;
+    border-radius: 6px;
+    padding: 0px 5px;
+    text-shadow: none;  
+  
+    /* Position the tooltip */
+    position: relative;
+    z-index: 1;
+    left: 8px;
+  }  
+  
+  /* .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }   */
+
+/* Change cursor to point when hover over selections */  
+label, input:hover {
+    cursor: pointer; 
+}    
 
 #cart {
     width: 300px; 
