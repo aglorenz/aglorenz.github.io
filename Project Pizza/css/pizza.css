@@ -6,8 +6,50 @@ body {
     margin: 0px; 
     display: block;
     color: gold;
+	animation: fadeInAnimation cubic-bezier(0.6, -0.28, 0.74, 0.05) .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
+  
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+/* .butterfly > div {position:absolute;}
+.butterfly img {width:100%;} */
+		
+.leftwing {
+  animation:flap-l 5s cubic-bezier(.28,-.8,.08,.99) infinite;
+	/*animation-timing-function: ease-in-out;*/
+}
+.rightwing {
+  animation:flap-r 5s cubic-bezier(.28,-.8,.08,.99) infinite;
+	/*animation-timing-function: ease-in-out;*/
+}
+
+/* @keyframes flap-l {
+			0% {transform:rotateY(0);}
+			50% {transform:rotateY(-70deg);}
+			100% {transform:rotateY(0);}
+} */
+
+@keyframes flap-l {
+			0% {transform:  perspective(200px) rotateY(0);}
+			50% {transform: perspective(200px) rotateY(-40deg);}
+			100% {transform:perspective(200px) rotateY(0);}
+}
+@keyframes flap-r {
+			0% {transform:perspective(200px) rotateY(0); }
+			50% {transform:perspective(200px) rotateY(40deg);}
+			100% {transform:perspective(200px) rotateY(0);}
+}
+/* https://codepen.io/Katrine-Marie/pen/MYZNOG */
 h1 {
     /* color:gold;   */
     margin: auto; 
@@ -19,33 +61,65 @@ h1 {
 /* ---------------------------------------------------------------
                         HEADER STYLING 
    --------------------------------------------------------------- */
-.header-bg {
+.header-flex {
     background-color: #500f86;
     padding-top: 10px;
-    height: 400px;
+    height: auto;
+    /* height: 400px; */
     box-shadow: 0 0 5px 3px;
-    /* to show gold halo on bottom of header. Otherwise obscured by .main Brings  */    
-      position: relative;
-      z-index: 200;  
+    /* to show gold halo on bottom of header. Otherwise obscured by .main */    
+    position: relative;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
 }
 
-.wings-bg {
-    background: url('../img/wings1.png');
-    margin: 10px;
-    background-repeat: space; /* repeat and space images horizontally; don't show partial images */
-    background-size: contain;  /* causes image to shrink and fit (if needed) when viewport shrinks */
-    background-position: center; 
+.header-h1 {
+    margin-top: -104px;
+    margin-bottom: 22px;
 }
 
 .pizza-halo {
-    background-color: #fff; /* in case background image can't be found */
-    height: 198px;   /* affects horizontal positioning of the wings */
-    margin: 0 auto;
-    background: url('../img/halo.png');
+    /*background-color: #fff;*/ /* in case background image can't be found */
+    max-width: 184px;
+    max-height: 198px;   /* affects horizontal positioning of the wings */
+    width: 50%;
+    position: absolute;
+    top: 6%;
+    /*align-self: flex-start;*/  /* to preserve image aspect ratio */
+    /* background: url('../img/halo.png');
     background-repeat: no-repeat;
     background-position: center; 
-    background-size: contain;
+    background-size: contain; */
 }
+.wings-bg-l {
+    background: url('../img/wing-l.png');
+    margin: 10px;
+    background-repeat: no-repeat; /* repeat and space images horizontally; don't show partial images */
+    /* background-repeat: space; repeat and space images horizontally; don't show partial images */
+    background-size: contain;  /* causes image to shrink and fit (if needed) when viewport shrinks */
+    background-position: center; 
+    height: 298px;
+    width: 100%;
+    /* position: absolute; */
+    z-index: -1;
+}
+.wings-bg-r {
+    background: url('../img/wing-r.png');
+    margin: 10px;
+    background-repeat: no-repeat; /* repeat and space images horizontally; don't show partial images */
+    /* background-repeat: space; repeat and space images horizontally; don't show partial images */
+    background-size: contain;  /* causes image to shrink and fit (if needed) when viewport shrinks */
+    background-position: center; 
+    height: 298px;
+    width: 100%;
+    /* position: absolute; */
+    z-index: -1;
+    margin-top: -309px;
+}
+
 
 /* ---------------------------------------------------------------
                         MAIN STYLING 
@@ -58,8 +132,8 @@ main {
     background-size: 1600px;
     height: auto;
     /* Push .main z-index below that of .header to show gold halo */
-      position: relative;
-      z-index: 100;  
+    position: relative;
+    z-index: 100;  
 
 }
 
