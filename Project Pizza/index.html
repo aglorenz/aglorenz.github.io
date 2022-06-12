@@ -6,7 +6,9 @@
     <title>Pizza Heaven</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./css/pizza.css" media="screen"/>
-		<script src="JS/pizza_heaven.js"defer></script>  
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="JS/pizza_heaven.js"defer></script>  
     
     <!-- ****** faviconit.com favicons ****** -->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -92,7 +94,12 @@
 
         <!----------------------------- CONTROLS ----------------------------------->
         <div class="menu-flx">
-            <div class="button" onclick="processOrder()">
+            <!-- when clicked, go to where the total price is displayed -->
+            <!-- <div class="button" onclick="location.href='#tot-prc'"> -->
+            <!-- <div class="button" onclick="scrollToTotal()"> -->
+            <!-- <div class="button" onclick="document.getElementById('tot-prc').scrollIntoView({ 
+                    behavior: 'smooth' });"> -->
+            <div class="button" onclick="smoothScroll('tot-prc', 800)">
                 <p><strong>PLACE ORDER</strong></p>
             </div>
             <div class="button" onclick="clearSelections()">

@@ -164,10 +164,10 @@
   // Get a list of all buttons with class='xmodal-open'
   var modalBtns = document.querySelectorAll('.xmodal-open');
 
-  // Add a 'click' event listener for each button that opens a modal
+  // Add a 'click' event listener for each button that opens a modal.
   // The function, called by event listener, retrieves the unique 
   // value associated with the custom attribute 'data-xmodal-target'
-  // This value identifies the modal which is then displayed opon button click
+  // This value identifies the modal which is then displayed upon button click
   modalBtns.forEach(function addBtnClickEvent(btn) {
     btn.onclick = function showModal() {
       var modalDataAttribute = btn.getAttribute('data-xmodal-target');

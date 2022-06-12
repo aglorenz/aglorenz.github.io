@@ -1,3 +1,19 @@
+/* ---------------------------------------------------------------
+            FONT from https://www.fontsquirrel.com/
+   --------------------------------------------------------------- */
+
+   @font-face {
+    font-family: 'gothic_ultra_otregular';
+    src: url('gothic_ultra_ot-webfont.eot');
+    src: url('gothic_ultra_ot-webfont.eot?#iefix') format('embedded-opentype'),
+            url('gothic_ultra_ot-webfont.woff') format('woff'),
+            url('gothic_ultra_ot-webfont.ttf') format('truetype'),
+            url('gothic_ultra_ot-webfont.svg#gothic_ultra_otregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
     background-color:#fff;
     /* background-color:#f7b82b; */ /* gold */
@@ -9,6 +25,7 @@ body {
 	animation: fadeInAnimation cubic-bezier(0.6, -0.28, 0.74, 0.05) .5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    overflow-x: hidden;
 }
 
   
@@ -21,23 +38,20 @@ body {
      }
 }
 
-/* .butterfly > div {position:absolute;}
-.butterfly img {width:100%;} */
+/* ---------------------------------------------------------------
+                        Angel Wings Animation
+   --------------------------------------------------------------- */
 		
 .leftwing {
-  animation:flap-l 5s cubic-bezier(.28,-.8,.08,.99) infinite;
+    /* animation:flap-l 5s cubic-bezier(.28,-.8,.08,.99) infinite; */
+    animation:flap-l 5s cubic-bezier(.28,-0.66,.2,.8) 2;
 	/*animation-timing-function: ease-in-out;*/
 }
 .rightwing {
-  animation:flap-r 5s cubic-bezier(.28,-.8,.08,.99) infinite;
+    /* animation:flap-r 5s cubic-bezier(.28,-.8,.08,.99) 2; */
+    animation:flap-r 5s cubic-bezier(.28,-0.66,.2,.88) 2;
 	/*animation-timing-function: ease-in-out;*/
 }
-
-/* @keyframes flap-l {
-			0% {transform:rotateY(0);}
-			50% {transform:rotateY(-70deg);}
-			100% {transform:rotateY(0);}
-} */
 
 @keyframes flap-l {
 			0% {transform:  perspective(200px) rotateY(0);}
@@ -50,14 +64,15 @@ body {
 			100% {transform:perspective(200px) rotateY(0);}
 }
 /* https://codepen.io/Katrine-Marie/pen/MYZNOG */
+
 h1 {
-    /* color:gold;   */
     margin: auto; 
     font-size: 100px; 
     text-shadow: 5px 5px #000;
     text-align: center; 
     line-height: .9em;
 }
+
 /* ---------------------------------------------------------------
                         HEADER STYLING 
    --------------------------------------------------------------- */
@@ -126,7 +141,7 @@ h1 {
    --------------------------------------------------------------- */
 
 main {
-    background: url('../img/pizza4.jpg') repeat center ;
+    background: url('../img/pizza4.jpg') repeat  ;
     /* Alternate way (instead of z-index) to get gold halo on bottom of header */
 /*    box-shadow: inset -4px 9px 9px -4px gold;*/
     background-size: 1600px;
@@ -189,6 +204,15 @@ label {
     transition-duration: .4s; 
 }
 
+.button-anchor {
+    text-decoration: none; 
+    color: gold;
+}
+
+.button-anchor:hover {
+    text-decoration: none; 
+    color: #500f86;
+}
 .button:hover {
     text-shadow: none;
     color: #500f86;
@@ -267,19 +291,4 @@ label, input:hover {
     border-bottom-right-radius: 0.5em;
 }
 
-/* ---------------------------------------------------------------
-            FONT from https://www.fontsquirrel.com/
-   --------------------------------------------------------------- */
 
-@font-face {
-    font-family: 'gothic_ultra_otregular';
-    src: url('gothic_ultra_ot-webfont.eot');
-    src: url('gothic_ultra_ot-webfont.eot?#iefix') format('embedded-opentype'),
-            url('gothic_ultra_ot-webfont.woff2') format('woff2'),
-            url('gothic_ultra_ot-webfont.woff') format('woff'),
-            url('gothic_ultra_ot-webfont.ttf') format('truetype'),
-            url('gothic_ultra_ot-webfont.svg#gothic_ultra_otregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}

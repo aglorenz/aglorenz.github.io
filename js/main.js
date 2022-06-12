@@ -7,7 +7,7 @@ $('.navbar-nav>li>a').on('click', function(){
 });
 
 // smooth scrolling 
-// source:  lost link :( 
+// source:  W3schools.com https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
 $(document).ready(function(){
   // Add smooth scrolling to all links
   $("a").on('click', function(event) {

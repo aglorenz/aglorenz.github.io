@@ -167,7 +167,7 @@ function processOrder() {
 
 // --------------------------------------------------------------------------
 // Checks if No Cheese and Extra Cheese are selected.  If so, cancel the extra 
-// cheese selection and show a tooltip telling use to select a cheese first 
+// cheese selection and show a tooltip telling user to select a cheese first 
 function validateCheese() {
     var noCheese = document.getElementById("no-cheese");
     var extraCheese = document.getElementById("extra-cheese");
@@ -178,6 +178,12 @@ function validateCheese() {
         toolText.style.visibility="visible";
         setTimeout(function () { toolText.style.visibility="hidden";}, 1700);
     }
+}
+
+function scrollToTotal() {
+    var element = document.getElementById('tot-prc');
+    // element.scrollIntoView();
+    element.scrollIntoView({behavior: "smooth"});
 }
 
 // --------------------------------------------------------------------------
@@ -221,3 +227,29 @@ function clearSelections() {
 
 // show cart right at the start
 processOrder();
+
+function smoothScroll(id, duration) {
+    const endPoint = typeof id === 'string' ? document.getElementById(id).offsetTop : id.offsetTop
+    const distance = endPoint - window.pageYOffset,
+        rate = (distance * 4) / duration, // px/4ms
+        interval = setInterval(scrollIncrement, 4) //4ms is minimum interval for browser
+
+    // used in below function to determine if we have stopped scrolling 
+    var prevYOffset = -1; // initialize previous y offset to something that won't conflict with current offset
+    
+    function scrollIncrement() {
+        const yOffset = Math.ceil(window.pageYOffset)
+        if (
+        (yOffset >= endPoint && rate >= 0) ||  // scrolling down
+        (yOffset == prevYOffset) ||  // or stop when we can't scroll anymore like when target is near bottom of page
+        (yOffset <= endPoint && rate <= 0)  // scrolling up
+        ) {
+        clearInterval(interval)
+        } else {
+        prevYOffset = yOffset;  // Save current offset for next time this function is called.
+        //keep in mind that scrollBy doesn't work with decimal pixels < 1 like 0.4px, so
+        //if duration is too big, function won't work. rate must end up being >= 1px
+        window.scrollBy(0, rate);
+        }
+    }
+}
