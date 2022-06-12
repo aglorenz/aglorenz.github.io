@@ -259,7 +259,7 @@ $(document).ready(function(){
 function smoothScroll(id, duration) {
     const endPoint = typeof id === 'string' ? document.getElementById(id).offsetTop : id.offsetTop;
     const distance = endPoint - window.pageYOffset,
-        rate = (distance * 4) / duration, // px/4ms
+        rate = ((distance * 4) / duration) < 1 ? 1 : (distance * 4) / duration, // px/4ms
         interval = setInterval(scrollIncrement, 4); //4ms is minimum interval for browser
 
     var itemPriceList = "";
@@ -267,6 +267,7 @@ function smoothScroll(id, duration) {
     itemPriceList += "distance = " + distance + "<br>";
     itemPriceList += "rate = " + rate + "<br>";
     itemPriceList += "interval = " + interval + "<br>";
+    console.log(itemPriceList[3]);
 
     // used in below function to determine if we have stopped scrolling 
     var prevYOffset = -1; // initialize previous y - offset to something not possible
