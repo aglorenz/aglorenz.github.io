@@ -228,28 +228,57 @@ function clearSelections() {
 // show cart right at the start
 processOrder();
 
-function smoothScroll(id, duration) {
+// smooth scrolling 
+// source:  W3schools.com https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
+$(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("div.buttonn").on('click', function(event) {
+  
+      // Make sure this.hash has a value before overriding default behavior
+    //   if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+  
+        // Store hash
+        var hash = "#tot-prc";
+        // var hash = this.hash;
+        
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 900, function(){
+     
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+    //   } // End if
+    });
+  });
+  
+  function smoothScroll(id, duration) {
     const endPoint = typeof id === 'string' ? document.getElementById(id).offsetTop : id.offsetTop
     const distance = endPoint - window.pageYOffset,
-        rate = (distance * 4) / duration, // px/4ms
-        interval = setInterval(scrollIncrement, 4) //4ms is minimum interval for browser
-
-    // used in below function to determine if we have stopped scrolling 
-    var prevYOffset = -1; // initialize previous y offset to something that won't conflict with current offset
+      rate = (distance * 4) / duration, // px/4ms
+      interval = setInterval(scrollIncrement, 4) //4ms is minimum interval for browser
     
+    // used in below function to determine if we have stopped scrolling 
+    var prevYOffset = -1; // initialize previous y - offset to something not possible
+      
     function scrollIncrement() {
-        const yOffset = Math.ceil(window.pageYOffset)
-        if (
+      const yOffset = Math.ceil(window.pageYOffset)
+      if (
         (yOffset >= endPoint && rate >= 0) ||  // scrolling down
         (yOffset == prevYOffset) ||  // or stop when we can't scroll anymore like when target is near bottom of page
         (yOffset <= endPoint && rate <= 0)  // scrolling up
-        ) {
+      ) {
         clearInterval(interval)
-        } else {
+      } else {
         prevYOffset = yOffset;  // Save current offset for next time this function is called.
+        
         //keep in mind that scrollBy doesn't work with decimal pixels < 1 like 0.4px, so
         //if duration is too big, function won't work. rate must end up being >= 1px
         window.scrollBy(0, rate);
-        }
+      }
     }
-}
+  }

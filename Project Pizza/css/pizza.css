@@ -44,7 +44,7 @@ body {
 		
 .leftwing {
     /* animation:flap-l 5s cubic-bezier(.28,-.8,.08,.99) infinite; */
-    animation:flap-l 5s cubic-bezier(.28,-0.66,.2,.8) 2;
+    animation:flap-l 5s cubic-bezier(.28,-0.66,.2,.88) 2;
 	/*animation-timing-function: ease-in-out;*/
 }
 .rightwing {
