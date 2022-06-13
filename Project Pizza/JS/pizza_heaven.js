@@ -276,6 +276,8 @@ function smoothScroll(id, duration) {
     function scrollIncrement() {
         const yOffset = Math.ceil(window.pageYOffset);
         document.getElementById("tot-prc").innerHTML="<h3>YO = "+yOffset+"</h3>";
+        document.getElementById("tot-prc-hdr").innerHTML="<h3>PY = "+prevYOffset+"</h3>";
+
         // itemPriceList += "yOffset = " + yOffset + "<br>";
 
         if (
