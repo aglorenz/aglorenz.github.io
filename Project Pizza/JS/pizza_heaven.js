@@ -267,15 +267,16 @@ function smoothScroll(id, duration) {
     itemPriceList += "distance = " + distance + "<br>";
     itemPriceList += "rate = " + rate + "<br>";
     itemPriceList += "interval = " + interval + "<br>";
+    document.getElementById("itm-prc").innerHTML=itemPriceList;
 
 
     // used in below function to determine if we have stopped scrolling 
     var prevYOffset = -1; // initialize previous y - offset to something not possible
 
     function scrollIncrement() {
-        const yOffset = Math.ceil(window.pageYOffset)
-        itemPriceList += "yOffset = " + yOffset + "<br>";
-        // document.getElementById("itm-prc").innerHTML=itemPriceList;
+        const yOffset = Math.ceil(window.pageYOffset);
+        document.getElementById("tot-prc").innerHTML="<h3>YO = "+yOffset+"</h3>";
+        // itemPriceList += "yOffset = " + yOffset + "<br>";
 
         if (
             (yOffset >= endPoint && rate >= 0) ||  // scrolling down
