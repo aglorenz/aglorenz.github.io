@@ -283,7 +283,7 @@ function smoothScroll(id, duration) {
 
         if (
             (yOffset >= endPoint && rate >= 0) ||  // scrolling down
-            (yOffset == prevYOffset) ||  // or stop when we can't scroll anymore like when target is near bottom of page
+            // (yOffset == prevYOffset) ||  // or stop when we can't scroll anymore like when target is near bottom of page
             (yOffset <= endPoint && rate <= 0)  // scrolling up
         ) {
             clearInterval(interval)
