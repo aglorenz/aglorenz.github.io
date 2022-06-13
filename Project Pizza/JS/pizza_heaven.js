@@ -274,7 +274,8 @@ function smoothScroll(id, duration) {
     var prevYOffset = -1; // initialize previous y - offset to something not possible
 
     function scrollIncrement() {
-        const yOffset = Math.ceil(window.pageYOffset);
+        // const yOffset = Math.ceil(window.pageYOffset);
+        const yOffset = (window.pageYOffset);
         document.getElementById("tot-prc").innerHTML="<h3>YO = "+yOffset+"</h3>";
         document.getElementById("tot-prc-hdr").innerHTML="<h3>PY = "+prevYOffset+"</h3>";
 
