@@ -232,7 +232,7 @@ processOrder();
 // source:  W3schools.com https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
 $(document).ready(function(){
     // Add smooth scrolling to all links
-    $("div.buttonn").on('click', function(event) {
+    $("div.buttonnnnnnnnnnnnn").on('click', function(event) {
   
       // Make sure this.hash has a value before overriding default behavior
     //   if (this.hash !== "") {
@@ -251,23 +251,54 @@ $(document).ready(function(){
      
           // Add hash (#) to URL when done scrolling (default click behavior)
           window.location.hash = hash;
+          console.log("done");
         });
     //   } // End if
     });
 });
+//http://jsfiddle.net/loktar/yhQZu/18/
+function checkIfInView(element){
+    var offset = element.offset().top - $(window).scrollTop();
+
+    if(offset > window.innerHeight){
+        // Not in view so scroll to it
+        $('html,body').animate({scrollTop: offset}, 1000);
+        return false;
+    }
+   return true;
+}
+
+// window.addEventListener('scroll', function(ev) {
+
+//     var someDiv = document.getElementById('tot-prc-hdr');
+//     var distanceToTop = someDiv.getBoundingClientRect().top;
+ 
+//     console.log(distanceToTop);
+//  });
 
 function smoothScroll(id, duration) {
-    const endPoint = typeof id === 'string' ? document.getElementById(id).offsetTop : id.offsetTop;
-    const distance = endPoint - window.pageYOffset,
-        rate = ((distance * 4) / duration) < 1 ? 1 : (distance * 4) / duration, // px/4ms
-        interval = setInterval(scrollIncrement, 4); //4ms is minimum interval for browser
+    // const endPoint = typeof id === 'string' ? document.getElementById(id).offsetTop : id.offsetTop;
+    // const endPoint = typeof id === 'string' ? document.getElementById(id).scrollTop : id.scrollTop;
+    // endPoint = id.getBoundingClientRect().top
+    const  el = document.getElementById(id);
+    const topOfDiv = el.getBoundingClientRect().top + window.pageYOffset; // distance from top of webpage to top of element (visible or not)
+    const divHeight = document.getElementById(id).clientHeight;  // height of element
+    const botOfDiv = topOfDiv + divHeight; // top of webpage to bottom of element
+    console.log("topOfDiv = " + topOfDiv);
+    console.log("div height = " + divHeight);
+    console.log("window.pageYOffset = " + window.pageYOffset); // y-scroll offset of page 
+    console.log("window.innerHeight = " + window.innerHeight); // height of window
 
-    var itemPriceList = "";
-    itemPriceList += "endPoint = " + endPoint + "<br>";
-    itemPriceList += "distance = " + distance + "<br>";
-    itemPriceList += "rate = " + rate + "<br>";
-    itemPriceList += "interval = " + interval + "<br>";
-    document.getElementById("itm-prc").innerHTML=itemPriceList;
+    const scrollDistance = botOfDiv - window.innerHeight - window.pageYOffset,
+        rate = ((scrollDistance * 4) / duration) < 1 ? 1 : (scrollDistance * 4) / duration, // px/4ms
+        interval = setInterval(scrollIncrement, 4); //4ms is minimum interval for browser
+    console.log("distance = " + scrollDistance);
+    // var itemPriceList = "";
+    // itemPriceList += "topDiv = " + topOfDiv + "<br>";
+    // itemPriceList += "distance = " + scrollDistance + "<br>";
+    // itemPriceList += "rate = " + rate + "<br>";
+    // itemPriceList += "interval = " + interval + "<br>";
+    // document.getElementById("itm-prc").innerHTML=itemPriceList;
 
 
     // used in below function to determine if we have stopped scrolling 
@@ -276,15 +307,15 @@ function smoothScroll(id, duration) {
     function scrollIncrement() {
         // const yOffset = Math.ceil(window.pageYOffset);
         const yOffset = (window.pageYOffset);
-        document.getElementById("tot-prc").innerHTML="<h3>YO = "+yOffset+"</h3>";
-        document.getElementById("tot-prc-hdr").innerHTML="<h3>PY = "+prevYOffset+"</h3>";
+            // document.getElementById("tot-prc").innerHTML="<h3>YO = "+yOffset+"</h3>";
+            // document.getElementById("tot-prc-hdr").innerHTML="<h3>PY = "+prevYOffset+"</h3>";
 
         // itemPriceList += "yOffset = " + yOffset + "<br>";
 
         if (
-            (yOffset >= endPoint && rate >= 0) ||  // scrolling down
+            (yOffset + window.innerHeight >= botOfDiv && rate >= 0) ||  // scrolling down
             // (yOffset == prevYOffset) ||  // or stop when we can't scroll anymore like when target is near bottom of page
-            (yOffset <= endPoint && rate <= 0)  // scrolling up
+            (yOffset  + window.innerHeight <= botOfDiv && rate <= 0)  // scrolling up
         ) {
             clearInterval(interval)
         } else {
@@ -293,6 +324,7 @@ function smoothScroll(id, duration) {
             //keep in mind that scrollBy doesn't work with decimal pixels < 1 like 0.4px, so
             //if duration is too big, function won't work. rate must end up being >= 1px
             window.scrollBy(0, rate);
+            console.log("rate = " + rate);
         } 
     }
 }
