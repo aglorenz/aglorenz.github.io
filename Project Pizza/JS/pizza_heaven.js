@@ -252,10 +252,11 @@ element.addEventListener("click", function(e){
   
   void anim[0].offsetWidth;
   void anim[1].offsetWidth;
-  
+  setTimeout(function () { 
+      anim[0].classList.add("leftwing");
+      anim[1].classList.add("rightwing");
+  }, 500);
   // -> and re-adding the class
-  anim[0].classList.add("leftwing");
-  anim[1].classList.add("rightwing");
 }, false);
 
 // play stop wings animation
