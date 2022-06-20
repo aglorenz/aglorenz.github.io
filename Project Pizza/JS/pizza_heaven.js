@@ -228,6 +228,50 @@ function clearSelections() {
 // show cart right at the start
 processOrder();
 
+
+// restart wings animation when clicking on pizza halo
+// https://codepen.io/chriscoyier/pen/EyRMoJ
+"use strict";
+
+// retrieve the element
+var element = document.getElementById("restart");
+
+// reset the transition by...
+element.addEventListener("click", function(e){
+  e.preventDefault;
+  
+  // -> removing the class
+  var anim = document.querySelectorAll('.leftwing, .rightwing');
+  anim[0].classList.remove("leftwing");
+  anim[1].classList.remove("rightwing");
+  
+  // -> triggering reflow /* The actual magic */
+  // without this it wouldn't work. Try uncommenting the line and the transition won't be retriggered.
+  // This was, from the original tutorial, will not work in strict mode. Thanks Felis Phasma! The next uncommented line is the fix.
+  // element.offsetWidth = element.offsetWidth;
+  
+  void anim[0].offsetWidth;
+  void anim[1].offsetWidth;
+  
+  // -> and re-adding the class
+  anim[0].classList.add("leftwing");
+  anim[1].classList.add("rightwing");
+}, false);
+
+// play stop wings animation
+// var anim = document.querySelectorAll('.leftwing, .rightwing');
+// document.getElementById('play-stop').onclick = function () {
+//     for (var i = 0; i < anim.length; i++) {
+//         if (anim[i].style.animationPlayState == 'paused') {
+//             anim[i].style.animationPlayState = 'running';
+//         }
+//         else {
+//             anim[i].style.animationPlayState = 'paused';
+//         }
+//     }
+// }
+
+
 // smooth scrolling 
 // source:  W3schools.com https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
 $(document).ready(function(){
