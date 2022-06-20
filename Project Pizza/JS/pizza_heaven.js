@@ -252,11 +252,15 @@ element.addEventListener("click", function(e){
   
   void anim[0].offsetWidth;
   void anim[1].offsetWidth;
+
+  // Brief timeout needed to allow complete class removal to take effect on iPhone Safari 
+  // before adding it back in. Otherwise only 1 or the other wing restarts but not both 
+  // This is needed only when the animation is currently running.
   setTimeout(function () { 
       anim[0].classList.add("leftwing");
       anim[1].classList.add("rightwing");
   }, 10);
-  // -> and re-adding the class
+
 }, false);
 
 // play stop wings animation

@@ -118,7 +118,7 @@ h1 {
     background-position: center; 
     height: 298px;
     width: 100%;
-    /* position: absolute; */
+    position: relative;
     z-index: -2;
 }
 .wings-bg-r {
@@ -130,7 +130,7 @@ h1 {
     background-position: center; 
     height: 298px;
     width: 100%;
-    /* position: absolute; */
+    position: relative;
     z-index: -2;
     margin-top: -309px;
 }
