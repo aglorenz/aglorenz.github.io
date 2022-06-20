@@ -276,7 +276,26 @@ function checkIfInView(element){
 //     console.log(distanceToTop);
 //  });
 
-function smoothScroll(id, duration) {
+function scrollUntilVisible(id, duration) {
+    const  el = document.getElementById(id);
+    const topOfDiv = el.getBoundingClientRect().top + window.pageYOffset; // distance from top of webpage to top of element (visible or not)
+    const divHeight = document.getElementById(id).clientHeight;  // height of element
+    const botOfDiv = topOfDiv + divHeight; // top of webpage to bottom of element
+    // const scrollDistance = botOfDiv - window.innerHeight - window.pageYOffset
+    // console.log("topOfDiv = " + topOfDiv);
+    // console.log("div height = " + divHeight);
+    // console.log("window.pageYOffset = " + window.pageYOffset); // y-scroll offset of page 
+    // console.log("window.innerHeight = " + window.innerHeight); // height of window
+    // console.log("scrollDistance = " + scrollDistance); 
+
+    var y = $(window).scrollTop(); // current y position
+    // $('html, body').animate({ scrollTop: y + scrollDistance },duration, 'swing');
+    $('html, body').animate({ scrollTop: botOfDiv - window.innerHeight }, duration, 'swing');
+}
+
+
+function scrollUntilVisibleOld(id, duration) {
+    // This is not as smooth as animated scrolling.  Not going to use it.
     // const endPoint = typeof id === 'string' ? document.getElementById(id).offsetTop : id.offsetTop;
     // const endPoint = typeof id === 'string' ? document.getElementById(id).scrollTop : id.scrollTop;
     // endPoint = id.getBoundingClientRect().top
