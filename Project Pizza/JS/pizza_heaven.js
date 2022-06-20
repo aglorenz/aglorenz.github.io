@@ -255,7 +255,7 @@ element.addEventListener("click", function(e){
   setTimeout(function () { 
       anim[0].classList.add("leftwing");
       anim[1].classList.add("rightwing");
-  }, 500);
+  }, 10);
   // -> and re-adding the class
 }, false);
 
