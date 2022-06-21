@@ -119,7 +119,7 @@ h1 {
     height: 298px;
     width: 100%;
     position: relative;
-    z-index: -2;
+    z-index: -9999;
 }
 .wings-bg-r {
     background: url('../img/wing-r.png');
@@ -131,7 +131,7 @@ h1 {
     height: 298px;
     width: 100%;
     position: relative;
-    z-index: -2;
+    z-index: -9999;
     margin-top: -309px;
 }
 
