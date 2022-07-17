@@ -165,7 +165,7 @@ function processOrder() {
     displayReceipt(namePriceArray)
 }
 
-// --------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////////////////
 // Checks if No Cheese and Extra Cheese are selected.  If so, cancel the extra 
 // cheese selection and show a tooltip telling user to select a cheese first 
 function validateCheese() {
@@ -174,32 +174,27 @@ function validateCheese() {
     var toolText = document.getElementById("cheese-tip")
     if (noCheese.checked && extraCheese.checked) {
         extraCheese.checked = false;
-        // set tooltip visible for a short period
-        toolText.style.visibility="visible";
-        setTimeout(function () { toolText.style.visibility="hidden";}, 1700);
+        // set tooltip visible for a brief period
+        $(toolText).fadeIn();
+        setTimeout(function () { $(toolText).fadeOut();}, 1700);
     }
 }
 
-function scrollToTotal() {
-    var element = document.getElementById('tot-prc');
-    // element.scrollIntoView();
-    element.scrollIntoView({behavior: "smooth"});
-}
-
-// --------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////////////
 // Cancel the Extra cheese selection when user clicks on No Cheese
 function cancelExtraCheese() {
     var extraCheese = document.getElementById("extra-cheese");
     extraCheese.checked = false;
 }
 
-//-----------------------------------------------------------------
+
+/////////////////////////////////////////////////////////////////////
 // Given a 2D list of items and prices:
 // 1) create two HTML formatted strings separated by line breaks.  
 //    One for items selected, one for the corresponding prices.
 // 2) Calculate total price along the way
 // 3) Inject all 3 into the cart.
-//-----------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////
 function displayReceipt(namePriceArray) {
  
     // To hold a list of pizza items and their respective prices
@@ -228,13 +223,16 @@ function clearSelections() {
 // show cart right at the start
 processOrder();
 
+//////////////////////////////////////////////////////////////////////
+// Wings Animation
+//////////////////////////////////////////////////////////////////////
 
 // restart wings animation when clicking on pizza halo
 // https://codepen.io/chriscoyier/pen/EyRMoJ
 "use strict";
 
 // retrieve the element
-var element = document.getElementById("restart");
+var element = document.getElementById("restart-wings");
 
 // reset the transition by...
 element.addEventListener("click", function(e){
@@ -276,25 +274,15 @@ element.addEventListener("click", function(e){
 //     }
 // }
 
+//////////////////////////////////////////////////////////////////
+// Scroll Until Visible
+//////////////////////////////////////////////////////////////////
 
-//http://jsfiddle.net/loktar/yhQZu/18/
-function checkIfInView(element){
-    var offset = element.offset().top - $(window).scrollTop();
-
-    if(offset > window.innerHeight){
-        // Not in view so scroll to it
-        $('html,body').animate({scrollTop: offset}, 1000);
-        return false;
-    }
-   return true;
-}
-
-
-function scrollUntilVisible(id, duration) {
+function scrollUntilVisible(id, duration, offset=0) {
     const  el = document.getElementById(id);
     const topOfDiv = el.getBoundingClientRect().top + window.pageYOffset; // distance from top of webpage to top of element (visible or not)
     const divHeight = document.getElementById(id).clientHeight;  // height of element
-    const botOfDiv = topOfDiv + divHeight; // top of webpage to bottom of element
+    const botOfDiv = topOfDiv + divHeight + offset; // top of webpage to bottom of element
     // const scrollDistance = botOfDiv - window.innerHeight - window.pageYOffset
     // console.log("topOfDiv = " + topOfDiv);
     // console.log("div height = " + divHeight);
@@ -307,6 +295,27 @@ function scrollUntilVisible(id, duration) {
     $('html, body').animate({ scrollTop: botOfDiv - window.innerHeight }, duration, 'swing');
 }
 
+////////////////////////////////////////////////////////////////////
+// The functions below are no longer used.  May delete later.
+////////////////////////////////////////////////////////////////////
+
+function scrollToTotal() {
+    var element = document.getElementById('tot-prc');
+    // element.scrollIntoView();
+    element.scrollIntoView({behavior: "smooth"});
+}
+
+//http://jsfiddle.net/loktar/yhQZu/18/
+function checkIfInView(element){
+    var offset = element.offset().top - $(window).scrollTop();
+
+    if(offset > window.innerHeight){
+        // Not in view so scroll to it
+        $('html,body').animate({scrollTop: offset}, 1000);
+        return false;
+    }
+   return true;
+}
 
 function scrollUntilVisibleOld(id, duration) {
     // This is not as smooth as animated scrolling.  Not going to use it.
