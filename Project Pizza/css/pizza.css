@@ -103,6 +103,7 @@ h1 {
     width: 50%;
     position: absolute;
     top: 6%;
+    cursor: pointer;
     /*align-self: flex-start;*/  /* to preserve image aspect ratio */
     /* background: url('../img/halo.png');
     background-repeat: no-repeat;
