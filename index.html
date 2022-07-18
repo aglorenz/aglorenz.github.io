@@ -68,7 +68,7 @@
     <header id="home" class="header">
       <div class="text-vertical-center" style="color: antiquewhite;">
         <h1>Andrew Lorenz</h1>
-        <h3>Software Developer</h3>
+        <h3>Full Stack Developer</h3>
       </div> 
     </header>
 
@@ -83,8 +83,22 @@
         <img src="img/icons8-under-construction-52.png" alt="missing" width="40" height="40">
         <br>
         <br>
-
+        
         <div class="skills-flex">
+          
+          <!------------------------------------ Version Control --------------------------------->  
+  
+          <div class="skill-cell">
+              <img src="img/gitWhiteBranch.png" alt="Version Control" class="cell-icon">
+              <!-- <img src="img/Git-Icon-Orange2.png" alt="Version Control" class="cell-icon"> -->
+  
+              <h4 class="cell-title">
+                <strong>Version Control</strong>
+              </h4>
+              <button data-xmodal-target="versionControlModal" class="xmodal-open btn-blu">
+                Skills Summary
+              </button>
+          </div> <!-- Skill Cell Version Control -->
 
           <!--------------------------- Web Development --------------------------------->  
 
@@ -97,38 +111,22 @@
             <button data-xmodal-target="webDevModal" class="xmodal-open btn-blu">
               Skills Summary
             </button>
-              
           </div>  <!-- Skill Cell Web Development -->
 
           <!------------------------------------ SQL --------------------------------->  
 
           <div class="skill-cell">
-              <img src="img/MSSQLServer.png" alt="MS SQL Server" class="cell-icon">
+            <img src="img/MSSQLServer.png" alt="MS SQL Server" class="cell-icon">
 
-              <h4 class="cell-title">
-                <strong>SQL</strong>
-              </h4>
-              <button data-xmodal-target="sqlModal" class="xmodal-open btn-blu">
-                Skills Summary
-              </button>
-
+            <h4 class="cell-title">
+              <strong>SQL</strong>
+            </h4>
+            <button data-xmodal-target="sqlModal" class="xmodal-open btn-blu">
+              Skills Summary
+            </button>
           </div>   <!-- Skill Cell SQL -->
 
-          <!------------------------------------ Version Control --------------------------------->  
-
-          <div class="skill-cell">
-              <img src="img/gitWhiteBranch.png" alt="Version Control" class="cell-icon">
-              <!-- <img src="img/Git-Icon-Orange2.png" alt="Version Control" class="cell-icon"> -->
-
-              <h4 class="cell-title">
-                <strong>Version Control</strong>
-              </h4>
-              <button data-xmodal-target="versionControlModal" class="xmodal-open btn-blu">
-                Skills Summary
-              </button>
-					</div>
-
-          <!------------------------------------ Python --------------------------------->  
+        <!------------------------------------ Python --------------------------------->  
 
           <div class="skill-cell">
               <img src="img/python.png" alt="Python" class="cell-icon">
@@ -139,7 +137,7 @@
               <button data-xmodal-target="pythonModal" class="xmodal-open btn-blu">
                 Skills Summary
               </button>
-					</div>
+					</div> <!-- Skill Cell Python -->
 
           <!------------------------------------ C# --------------------------------->  
 
@@ -152,7 +150,7 @@
               <button data-xmodal-target="cSharpModal" class="xmodal-open btn-blu">
                 Skills Summary
               </button>
-					</div>
+					</div> <!-- Skill Cell C# -->
 
 				</div>  <!-- Skills Flex-->
         <br>
@@ -187,7 +185,10 @@
       <section id="projects" class="projects">
         <!-- <div class="projects-spacer"></div> -->
         <h1 class="tech-skills-hdr">Projects</h1>
-          <!------------------------------------ C# --------------------------------->  
+
+        <div class="skills-flex">
+
+          <!------------------------------------ Pizza Menu --------------------------------->  
 
           <div class="skill-cell">
             <img src="./Project Pizza/img/halo.png" alt="pizza halo" class="cell-icon">
@@ -198,6 +199,19 @@
             <button data-xmodal-target="pizzaModal" class="xmodal-open btn-orng">About</button>
             <a href="./Project Pizza/index.html" target="_blank"> <button class="btn-orng">View it</button> </a>
         </div>
+
+          <!------------------------------------ Django Profile --------------------------------->  
+
+          <div class="skill-cell">
+            <img src="./img/hawaii.jpg" alt="Django Profile" class="cell-icon">
+            
+            <h4 class="cell-title">
+              <strong>Django App</strong>
+            </h4>
+            <button data-xmodal-target="djangoModal" class="xmodal-open btn-orng">About</button>
+            <a href="http://aglorenz.pythonanywhere.com/" target="_blank"> <button class="btn-orng">View it</button> </a>
+        </div>
+      </div>  <!-- Projects Flex-->
         <br>
         <br>
         <br>
@@ -246,8 +260,45 @@
       <!------------------------------------------------------------------------------->
       <!--                            Skills Modals                                  -->
       <!------------------------------------------------------------------------------->
+      
+      <!------------------------------ Version Control -------------------------->
+
+      <!-- onclick="" needed to register click for Safari -->
+      <div class="xmodal-bg" onclick="" >
+        <div class="xmodal-container">
+          <div id="versionControlModal" class="xmodal-content">
+            <span class="xclose xmodal-close">&times;</span>
+            <div class="xmodal-hdr">
+              <!-- <img src="img/Git-Icon-Orange2.png" alt="Version Control" class="cell-icon"> -->
+              <img src="img/gitClearBranch.png" alt="Version Control" class="cell-icon">
+            </div>
+            <h1 class="xmodal-body-title">VSS &#x279d TFS &#x279d Git </h1>
+            <div class="xmodal-body">  <!-- separate divs needed for object animation separation -->
+              <p class="xmodal-body-txt">In college, one of our assignments was to write a 
+                Module Library System to store the latest version of each 'module' of code. Version control has become
+            so much more sophisticated since then. My professional experience with version control began with 
+            Visual SourceSafe, then to Team Foundation Server (at Intel), and now, Git.
+              </p>
+            </div>
+            <div class="xmodal-body">
+              <h5 class=xmodal-list-hdr>I am familiar with:</h5>
+              <ul class=xmodal-body-txt>
+                <li>Git / Git Bash</li>
+								<li>GitHub</li>
+								<li>Team Foundation Server (TFS)</li>
+								<li>Visual SourceSafe (VSS)</li>
+              </ul>
+						</div>
+            <div class="xmodal-footer">
+              <button class="xmodal-close">Close</button>
+              <br>
+            </div>
+          </div> <!-- xmodal-content -->
+        </div>  <!-- xmodal-container -->
+      </div> <!-- xmodal-bg Version Control -->
 
       <!------------------------------- Web Development -------------------------------->
+
       <!-- onclick="" needed to register click for Safari -->
       <div class="xmodal-bg" onclick="">
         <div class="xmodal-container">
@@ -283,9 +334,10 @@
             </div>
           </div> <!-- xmodal-content -->
         </div>  <!-- xmodal-container -->
-      </div> <!-- xmodal-bg Web Development-->
-        
+      </div> <!-- xmodal-bg Web Development-->  
+
       <!------------------------------------ SQL ----------------------------------->
+
       <!-- onclick="" needed to register click for Safari -->
       <div class="xmodal-bg" onclick="" >
         <div class="xmodal-container">
@@ -322,42 +374,8 @@
         </div>  <!-- xmodal-container -->
       </div> <!-- xmodal-bg SQL -->
       
-      <!------------------------------ Version Control -------------------------->
-      <!-- onclick="" needed to register click for Safari -->
-      <div class="xmodal-bg" onclick="" >
-        <div class="xmodal-container">
-          <div id="versionControlModal" class="xmodal-content">
-            <span class="xclose xmodal-close">&times;</span>
-            <div class="xmodal-hdr">
-              <!-- <img src="img/Git-Icon-Orange2.png" alt="Version Control" class="cell-icon"> -->
-              <img src="img/gitClearBranch.png" alt="Version Control" class="cell-icon">
-            </div>
-            <h1 class="xmodal-body-title">VSS &#x279d TFS &#x279d Git </h1>
-            <div class="xmodal-body">  <!-- separate divs needed for object animation separation -->
-              <p class="xmodal-body-txt">In college, one of our assignments was to write a 
-                Module Library System to store the latest version of each 'module' of code. Version control has become
-            so much more sophisticated since then. My professional experience with version control began with 
-            Visual SourceSafe, then to Team Foundation Server (at Intel), and now, Git.
-              </p>
-            </div>
-            <div class="xmodal-body">
-              <h5 class=xmodal-list-hdr>I am familiar with:</h5>
-              <ul class=xmodal-body-txt>
-                <li>Git / Git Bash</li>
-								<li>GitHub</li>
-								<li>Team Foundation Server (TFS)</li>
-								<li>Visual SourceSafe (VSS)</li>
-              </ul>
-						</div>
-            <div class="xmodal-footer">
-              <button class="xmodal-close">Close</button>
-              <br>
-            </div>
-          </div> <!-- xmodal-content -->
-        </div>  <!-- xmodal-container -->
-      </div> <!-- xmodal-bg Version Control -->
-    
       <!------------------------------ Python -------------------------->
+
       <!-- onclick="" needed to register click for Safari -->
       <div class="xmodal-bg" onclick="" >
         <div class="xmodal-container">
@@ -394,6 +412,7 @@
       </div> <!-- xmodal-bg Python -->
 
       <!------------------------------ C#  -------------------------->
+
       <!-- onclick="" needed to register click for Safari -->
       <div class="xmodal-bg" onclick="" >
         <div class="xmodal-container">
@@ -432,7 +451,6 @@
       <!--                            Project Modals                                  -->
       <!------------------------------------------------------------------------------->
 
-
       <!------------------------------ Pizza Project  -------------------------->
 
       <!-- onclick="" needed to register click for Safari -->
@@ -452,11 +470,13 @@
             <div class="xmodal-body">
               <h5 class=xmodal-list-hdr>Notes:</h5>
               <ul class=xmodal-body-txt>
-                <li>It's Responsive. Try expanding and shrinking the window and watch the wing icons .</li>                
-								<li>Menu tiles grouped to fit the viewport size.</li>
-								<li>Menu prices and names stored in a dictionary.</li>
-								<li>Clicking on a menu item adds it to the receipt and recalculates the receipt total.</li>								
-								<li>Works on an iPhone.</li>
+                <li>It's Responsive. Try expanding and shrinking the window.</li>                
+                <li>The wings flap. Click on pizza halo to restart the animation.</li>                
+								<li>Menu prices and names stored in a dictionary for easy update.</li>
+								<li>Custom popup when No Cheese selected and Extra Cheese pressed.</li>
+								<li>Custom smooth scroll to total price when View Price pressed.</li>
+                <li>Not required to click radio button or checkbox. Can click menu item.</li>                
+								<li>Clicking on a menu item adds it to the receipt and recalculates total price.</li>								
 								<li>Makes you hungry.</li>
 							</ul>
 						</div>
@@ -466,7 +486,39 @@
             </div>
           </div> <!-- xmodal-content -->
         </div>  <!-- xmodal-container -->
-      </div> <!-- xmodal-bg C# -->
+      </div> <!-- xmodal-bg Pizza -->
+
+      <!------------------------------ Django Profiles  -------------------------->
+
+      <!-- onclick="" needed to register click for Safari -->
+      <div class="xmodal-bg" onclick="" >
+        <div class="xmodal-container">
+          <div id="djangoModal" class="xmodal-content">
+            <span class="xclose xmodal-close">&times;</span>
+            <div class="xmodal-hdr">
+              <img src="./img/hawaii.jpg" alt="Pizza Halo" class="cell-icon">
+            </div>
+            <h1 class="xmodal-body-title">Django Profiles</h1>
+            <div class="xmodal-body">  <!-- separate divs needed for object animation separation -->
+              <p class="xmodal-body-txt">A Django website demonstrating CRUD functionality on a single-table SQLite3 database. 
+                <a class="nav-link" href="https://github.com/aglorenz/Python-Projects/tree/main/Django%20Profiles%20App/Hello_World" 
+                  target="_blank">GitHub Code <i class="fas fa-external-link-alt"></i></a></p>
+            </div>
+            <div class="xmodal-body">
+              <h5 class=xmodal-list-hdr>Notes:</h5>
+              <ul class=xmodal-body-txt>
+                <li>Users can create their profile by entering their title (from a dropdown), name, email and phone.</li>                
+                <li>They can also update and delete their profiles.</li>                
+                <li>Site is hosted on PythonAnywhere.com.</li>                
+              </ul>
+						</div>
+            <div class="xmodal-footer">
+              <button class="xmodal-close">Close</button>
+              <br>
+            </div>
+          </div> <!-- xmodal-content -->
+        </div>  <!-- xmodal-container -->
+      </div> <!-- xmodal-bg Pizza -->
 
     </main>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
