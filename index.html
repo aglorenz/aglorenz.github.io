@@ -49,13 +49,16 @@
             <a class="nav-link" href="#projects">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://www.github.com/aglorenz" target="_blank">Github <i class="fas fa-external-link-alt"></i></a>
+            <a class="nav-link" href="https://www.github.com/aglorenz" target="_blank" 
+              rel="noopener noreferrer">Github <i class="fas fa-external-link-alt"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://www.linkedin.com/in/andrew-lorenz-565208133/" target="_blank">LinkedIn <i class="fas fa-external-link-alt"></i></a>
+            <a class="nav-link" href="https://www.linkedin.com/in/andrew-lorenz-565208133/" target="_blank"
+              rel="noopener noreferrer">LinkedIn <i class="fas fa-external-link-alt"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://www.instagram.com/andrew_pdx/" target="_blank">Instagram <i class="fas fa-camera"></i></a>
+            <a class="nav-link" href="https://www.instagram.com/andrew_pdx/" target="_blank" 
+              rel="noopener noreferrer">Instagram <i class="fas fa-camera"></i></a>
           </li>
         </ul>
 
@@ -188,6 +191,19 @@
 
         <div class="skills-flex">
 
+          <!---------------------------- Download Repository Utility  ----------------------->  
+
+          <div class="skill-cell">
+            <img src="./img/DRU-Logo.png" alt="DRU" class="cell-icon">
+            
+            <h4 class="cell-title">
+              <strong>Download Repo Util</strong>
+            </h4>
+            <button data-xmodal-target="DRUModal" class="xmodal-open btn-orng">About</button>
+            <a href="https://github.com/aglorenz/Download-Repository-Utility/blob/main/README.md#about-the-project" target="_blank" rel="noopener noreferrer">
+              <button class="btn-orng">View it</button> </a>
+        </div>
+
           <!------------------------------------ Pizza Menu --------------------------------->  
 
           <div class="skill-cell">
@@ -197,7 +213,8 @@
               <strong>Pizza Heaven</strong>
             </h4>
             <button data-xmodal-target="pizzaModal" class="xmodal-open btn-orng">About</button>
-            <a href="./Project Pizza/index.html" target="_blank"> <button class="btn-orng">View it</button> </a>
+            <a href="./Project Pizza/index.html" target="_blank" rel="noopener noreferrer"> 
+              <button class="btn-orng">View it</button> </a>
         </div>
 
           <!------------------------------------ Django Profile --------------------------------->  
@@ -209,7 +226,8 @@
               <strong>Django App</strong>
             </h4>
             <button data-xmodal-target="djangoModal" class="xmodal-open btn-orng">About</button>
-            <a href="http://aglorenz.pythonanywhere.com/" target="_blank"> <button class="btn-orng">View it</button> </a>
+            <a href="http://aglorenz.pythonanywhere.com/" target="_blank" rel="noopener noreferrer"> 
+              <button class="btn-orng">View it</button> </a>
         </div>
       </div>  <!-- Projects Flex-->
         <br>
@@ -448,8 +466,42 @@
       </div> <!-- xmodal-bg C# -->
 
       <!------------------------------------------------------------------------------->
-      <!--                            Project Modals                                  -->
+      <!--                            Project Modals                                 -->
       <!------------------------------------------------------------------------------->
+
+      <!------------------------- Dowload Repository Utility DRU ---------------------->
+
+      <!-- onclick="" needed to register click for Safari -->
+      <div class="xmodal-bg" onclick="" >
+        <div class="xmodal-container">
+          <div id="DRUModal" class="xmodal-content">
+            <span class="xclose xmodal-close">&times;</span>
+            <div class="xmodal-hdr">
+              <img src="./img/DRU-Logo_transparent.png" alt="DRU logo" class="cell-icon">
+            </div>
+            <h1 class="xmodal-body-title">Download Repository Utility</h1>
+            <div class="xmodal-body">  <!-- separate divs needed for object animation separation -->
+              <p class="xmodal-body-txt">A handy utility to quickly download, unzip, and open a Github Repository in Windows File Explorer. 
+                <a class="nav-link" href="https://github.com/aglorenz/Download-Repository-Utility" 
+                  target="_blank" rel="noopener noreferrer">GitHub Code <i class="fas fa-external-link-alt"></i></a></p>
+            </div>
+            <div class="xmodal-body">
+              <h5 class=xmodal-list-hdr>Notes:</h5>
+              <ul class=xmodal-body-txt>
+                <li>Personal after-work-hours project to help automate repetetive work tasks. </li>                
+                <li>Reduces throughput form 37 to 13 seconds.</li>                
+                <li>Reduces number of clicks from 20 to about 4.</li>                
+                <li>Unzips the repo, opens the top level folder in Windows File Explorer, deletes zip file.</li>                
+                <li>Build with Python, Tkinter, and Powershell</li>                
+							</ul>
+						</div>
+            <div class="xmodal-footer">
+              <button class="xmodal-close">Close</button>
+              <br>
+            </div>
+          </div> <!-- xmodal-content -->
+        </div>  <!-- xmodal-container -->
+      </div> <!-- xmodal-bg DRU -->
 
       <!------------------------------ Pizza Project  -------------------------->
 
@@ -465,7 +517,7 @@
             <div class="xmodal-body">  <!-- separate divs needed for object animation separation -->
               <p class="xmodal-body-txt">A fun, responsive, and over-the-top styled pizza menu. 
                 <a class="nav-link" href="https://github.com/aglorenz/The-Tech-Academy-JavaScript-Coding-Projects/tree/master/Project%20Pizza" 
-                  target="_blank">GitHub Code <i class="fas fa-external-link-alt"></i></a></p>
+                  target="_blank" rel="noopener noreferrer">GitHub Code <i class="fas fa-external-link-alt"></i></a></p>
             </div>
             <div class="xmodal-body">
               <h5 class=xmodal-list-hdr>Notes:</h5>
@@ -502,7 +554,7 @@
             <div class="xmodal-body">  <!-- separate divs needed for object animation separation -->
               <p class="xmodal-body-txt">A Django/Python full-stack web app that demonstrates CRUD functionality on single-table SQLite3 database.
                 <a class="nav-link" href="https://github.com/aglorenz/Python-Projects/tree/main/Django%20Profiles%20App/Hello_World" 
-                  target="_blank">GitHub Code <i class="fas fa-external-link-alt"></i></a></p>
+                  target="_blank" rel="noopener noreferrer">GitHub Code <i class="fas fa-external-link-alt"></i></a></p>
             </div>
             <div class="xmodal-body">
               <h5 class=xmodal-list-hdr>Notes:</h5>
@@ -518,7 +570,7 @@
             </div>
           </div> <!-- xmodal-content -->
         </div>  <!-- xmodal-container -->
-      </div> <!-- xmodal-bg Pizza -->
+      </div> <!-- xmodal-bg Django -->
 
     </main>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
