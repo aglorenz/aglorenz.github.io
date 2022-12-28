@@ -38,3 +38,20 @@ $(document).ready(function(){
     } // End if
   });
 });
+
+// set div to full height of viewport if content height is smaller
+$(window).on('resize scroll', function(e){
+  //const divHeight = document.getElementById(id).clientHeight;  // height of element
+  var docH = document.getElementById('projects').clientHeight;
+  //var viewPortH = parseInt($(window).height());
+  var viewPortH = window.innerHeight;
+  var x = 0;
+
+  if (docH > viewPortH) {
+
+      $('.projects').removeClass('full-height');
+  } else {
+      $('.projects').addClass('full-height');
+  }
+});
+$(window).trigger('resize');

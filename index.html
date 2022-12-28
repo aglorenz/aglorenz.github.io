@@ -79,11 +79,11 @@
       <!----------------------------- TECHNICAL SKILLS --------------------------------->
       <section id="techSkills" class="tech-skills">
         <h1 class="tech-skills-hdr">Technical Skills</h1>
-				<img src="img/icons8-under-construction-52.png" alt="missing" width="40" height="40">
-        <h5 style="color: antiquewhite">
+				<!-- <img src="img/icons8-under-construction-52.png" alt="missing" width="40" height="40"> -->
+        <!-- <h5 style="color: antiquewhite">
           Point of pride:  I created the modals with vanilla JavaScript, dynamics.js, and no Bootstrap! (A true labor of love!)
-				</h5>
-        <img src="img/icons8-under-construction-52.png" alt="missing" width="40" height="40">
+				</h5> -->
+        <!-- <img src="img/icons8-under-construction-52.png" alt="missing" width="40" height="40"> -->
         <br>
         <br>
         
@@ -178,11 +178,6 @@
         <br>
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
       </section>   <!-- Tech Skills --> 
 
       <section id="projects" class="projects">
@@ -202,20 +197,7 @@
             <button data-xmodal-target="DRUModal" class="xmodal-open btn-orng">About</button>
             <a href="https://github.com/aglorenz/Download-Repository-Utility/blob/main/README.md#about-the-project" target="_blank" rel="noopener noreferrer">
               <button class="btn-orng">View it</button> </a>
-        </div>
-
-          <!------------------------------------ Pizza Menu --------------------------------->  
-
-          <div class="skill-cell">
-            <img src="./Project Pizza/img/halo.png" alt="pizza halo" class="cell-icon">
-            
-            <h4 class="cell-title">
-              <strong>Pizza Heaven</strong>
-            </h4>
-            <button data-xmodal-target="pizzaModal" class="xmodal-open btn-orng">About</button>
-            <a href="./Project Pizza/index.html" target="_blank" rel="noopener noreferrer"> 
-              <button class="btn-orng">View it</button> </a>
-        </div>
+          </div>
 
           <!------------------------------------ Django Profile --------------------------------->  
 
@@ -228,8 +210,24 @@
             <button data-xmodal-target="djangoModal" class="xmodal-open btn-orng">About</button>
             <a href="http://aglorenz.pythonanywhere.com/" target="_blank" rel="noopener noreferrer"> 
               <button class="btn-orng">View it</button> </a>
-        </div>
-      </div>  <!-- Projects Flex-->
+          </div>
+
+          <!------------------------------------ Pizza Menu --------------------------------->  
+
+          <div class="skill-cell">
+            <img src="./Project Pizza/img/halo.png" alt="pizza halo" class="cell-icon">
+            
+            <h4 class="cell-title">
+              <strong>Pizza Heaven</strong>
+            </h4>
+            <button data-xmodal-target="pizzaModal" class="xmodal-open btn-orng">About</button>
+            <a href="./Project Pizza/index.html" target="_blank" rel="noopener noreferrer"> 
+              <button class="btn-orng">View it</button> </a>
+          </div>
+
+        </div>  <!-- Projects Flex-->
+
+        <!-- <br>
         <br>
         <br>
         <br>
@@ -254,18 +252,7 @@
         <br>
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <br> -->
       </section>  
       <!------------------------------------------------------------------------------->
       <!------------------------------------------------------------------------------->
@@ -503,6 +490,38 @@
         </div>  <!-- xmodal-container -->
       </div> <!-- xmodal-bg DRU -->
 
+      <!------------------------------ Django Profiles  -------------------------->
+
+      <!-- onclick="" needed to register click for Safari -->
+      <div class="xmodal-bg" onclick="" >
+        <div class="xmodal-container">
+          <div id="djangoModal" class="xmodal-content">
+            <span class="xclose xmodal-close">&times;</span>
+            <div class="xmodal-hdr">
+              <img src="./img/hawaii.jpg" alt="Pizza Halo" class="cell-icon">
+            </div>
+            <h1 class="xmodal-body-title">Django Profiles</h1>
+            <div class="xmodal-body">  <!-- separate divs needed for object animation separation -->
+              <p class="xmodal-body-txt">A Django/Python full-stack web app that demonstrates CRUD functionality on single-table SQLite3 database.
+                <a class="nav-link" href="https://github.com/aglorenz/Python-Projects/tree/main/Django%20Profiles%20App/Hello_World" 
+                  target="_blank" rel="noopener noreferrer">GitHub Code <i class="fas fa-external-link-alt"></i></a></p>
+            </div>
+            <div class="xmodal-body">
+              <h5 class=xmodal-list-hdr>Notes:</h5>
+              <ul class=xmodal-body-txt>
+                <li>Admin can create profiles by entering title (from a dropdown), name, email and phone.</li>                
+                <li>They can also update and delete profiles.</li>                
+                <li>Site is hosted on PythonAnywhere.com.</li>                
+              </ul>
+						</div>
+            <div class="xmodal-footer">
+              <button class="xmodal-close">Close</button>
+              <br>
+            </div>
+          </div> <!-- xmodal-content -->
+        </div>  <!-- xmodal-container -->
+      </div> <!-- xmodal-bg Django -->
+
       <!------------------------------ Pizza Project  -------------------------->
 
       <!-- onclick="" needed to register click for Safari -->
@@ -539,38 +558,6 @@
           </div> <!-- xmodal-content -->
         </div>  <!-- xmodal-container -->
       </div> <!-- xmodal-bg Pizza -->
-
-      <!------------------------------ Django Profiles  -------------------------->
-
-      <!-- onclick="" needed to register click for Safari -->
-      <div class="xmodal-bg" onclick="" >
-        <div class="xmodal-container">
-          <div id="djangoModal" class="xmodal-content">
-            <span class="xclose xmodal-close">&times;</span>
-            <div class="xmodal-hdr">
-              <img src="./img/hawaii.jpg" alt="Pizza Halo" class="cell-icon">
-            </div>
-            <h1 class="xmodal-body-title">Django Profiles</h1>
-            <div class="xmodal-body">  <!-- separate divs needed for object animation separation -->
-              <p class="xmodal-body-txt">A Django/Python full-stack web app that demonstrates CRUD functionality on single-table SQLite3 database.
-                <a class="nav-link" href="https://github.com/aglorenz/Python-Projects/tree/main/Django%20Profiles%20App/Hello_World" 
-                  target="_blank" rel="noopener noreferrer">GitHub Code <i class="fas fa-external-link-alt"></i></a></p>
-            </div>
-            <div class="xmodal-body">
-              <h5 class=xmodal-list-hdr>Notes:</h5>
-              <ul class=xmodal-body-txt>
-                <li>Admin can create profiles by entering title (from a dropdown), name, email and phone.</li>                
-                <li>They can also update and delete profiles.</li>                
-                <li>Site is hosted on PythonAnywhere.com.</li>                
-              </ul>
-						</div>
-            <div class="xmodal-footer">
-              <button class="xmodal-close">Close</button>
-              <br>
-            </div>
-          </div> <!-- xmodal-content -->
-        </div>  <!-- xmodal-container -->
-      </div> <!-- xmodal-bg Django -->
 
     </main>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

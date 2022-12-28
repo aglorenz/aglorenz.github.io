@@ -22,7 +22,9 @@ MAIN STYLING
   z-index: 200;
   margin-top: -57px;
   padding-top: 57px;
-  background: #571816;
+  background-color: #571816;
+  background-image: linear-gradient(#911e1b, #711c19);
+  /* background-image: linear-gradient(#891e1b, #601B18); */
   text-align: center;
 }
 
@@ -36,9 +38,15 @@ MAIN STYLING
   z-index: 100;
   margin-top: -57px;
   padding-top: 57px;
-  background: #1990bf;
+  background-image: linear-gradient(#5bb2cd, #3e98bb);
+  /* background-image: linear-gradient(#1990bf, #1990bf); */
   text-align: center;
 }   
+
+.full-height {
+  height: 100vh;
+}
+
 .projects-spacer {
   height: 58px;
   background-color: #571816;
