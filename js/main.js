@@ -39,19 +39,20 @@ $(document).ready(function(){
   });
 });
 
-// set div to full height of viewport if content height is smaller
+// Set section  to full height of viewport if content height is smaller so that background
+// color is full height of screen.
 $(window).on('resize scroll', function(e){
-  //const divHeight = document.getElementById(id).clientHeight;  // height of element
-  var docH = document.getElementById('projects').clientHeight;
-  //var viewPortH = parseInt($(window).height());
+  var secH = document.getElementById('projects').clientHeight; // section height
+  var nbH = document.getElementById('navbar').clientHeight; // navbar height
+  var h1H = document.getElementById('h1h').clientHeight; // H1 height
+  var SFH = document.getElementById('sfh').clientHeight; // skills flex height
   var viewPortH = window.innerHeight;
-  var x = 0;
+  console.log("secH = ", secH, "nbh = ", nbH, "h1H = ", h1H, "SFH = ", SFH, "viewPortH = ", viewPortH);
 
-  if (docH > viewPortH) {
-
-      $('.projects').removeClass('full-height');
+  if (SFH + 126 > viewPortH) {
+      $('#projects').removeClass('full-height');
   } else {
-      $('.projects').addClass('full-height');
+      $('#projects').addClass('full-height');
   }
 });
 $(window).trigger('resize');
