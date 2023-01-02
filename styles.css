@@ -1,0 +1,61 @@
+html,body {
+	margin:0;
+	padding:0;
+	height:100%; /* needed for container min-height */
+}
+
+.header {
+  display: table;
+  position: relative;
+  z-index: 300;
+  width: 100%;
+  height: 100%;
+  background: #ea5145;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.btn-orng {
+  background-color: #f0592f;
+  color: #fff;
+}
+.skill-cell {
+  margin: 10px 50px;
+}
+.cell-title {
+  color: antiquewhite
+}
+.cell-icon {
+  max-height: 165px;
+  border-radius: 10px;
+}
+
+.tech-skills {
+	position:relative; /* needed for footer positioning*/
+	height:auto !important; /* real browsers */
+	min-height:100%; /* real browsers */
+  background-image: linear-gradient(#5bb2cd, #3e98bb);
+}
+
+.projects {
+	position:relative; /* needed for footer positioning*/
+	height:auto !important; /* real browsers */
+	min-height:100%; /* real browsers */
+  background-image: linear-gradient(#5bb2cd, #3e98bb);
+}
+
+div#header {
+	padding:1em;
+  /* background:#efe; */
+}
+
+.skills-flex {
+	display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width: auto;
+  margin: 0% auto;
+}

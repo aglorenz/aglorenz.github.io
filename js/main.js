@@ -40,19 +40,24 @@ $(document).ready(function(){
 });
 
 // Set section  to full height of viewport if content height is smaller so that background
-// color is full height of screen.
-$(window).on('resize scroll', function(e){
-  var secH = document.getElementById('projects').clientHeight; // section height
-  var nbH = document.getElementById('navbar').clientHeight; // navbar height
-  var h1H = document.getElementById('h1h').clientHeight; // H1 height
-  var SFH = document.getElementById('sfh').clientHeight; // skills flex height
-  var viewPortH = window.innerHeight;
-  console.log("secH = ", secH, "nbh = ", nbH, "h1H = ", h1H, "SFH = ", SFH, "viewPortH = ", viewPortH);
+// // color is full height of screen.
+// $(window).on('resize scroll', function(e){
+//   //give each element a name like projects1, navbar1, etc
+//   // loop through the array and adjust as necessary
 
-  if (SFH + 126 > viewPortH) {
-      $('#projects').removeClass('full-height');
-  } else {
-      $('#projects').addClass('full-height');
-  }
-});
-$(window).trigger('resize');
+//   var secH = document.getElementById('projects').clientHeight; // section height
+//   var nbH = document.getElementById('navbar').clientHeight; // navbar height
+//   var h1H = document.getElementById('h1h').clientHeight; // H1 height
+//   var SFH = document.getElementById('sfh').clientHeight; // skills flex height
+//   var that = document.getElements
+//   var viewPortH = window.innerHeight;
+//   console.log("secH = ", secH, "nbh = ", nbH, "h1H = ", h1H, "SFH = ", SFH, "viewPortH = ", viewPortH);
+
+//   if (SFH + 126 > viewPortH) {
+//       $('#projects').removeClass('full-height');
+//   } else {
+//       $('#projects').addClass('full-height');
+//   }
+// });
+// // fake a resize event on window load to call above function
+// $(window).trigger('resize');  

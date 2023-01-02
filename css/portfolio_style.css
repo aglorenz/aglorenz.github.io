@@ -17,39 +17,32 @@ HEADER STYLING
 /* ---------------------------------------------------------------
 MAIN STYLING 
 --------------------------------------------------------------- */
-.tech-skills {
+section {
   position: relative;
-  z-index: 200;
   margin-top: -57px;
   padding-top: 57px;
-  background-color: #571816;
-  background-image: linear-gradient(#911e1b, #711c19);
-  /* background-image: linear-gradient(#891e1b, #601B18); */
+  height:auto !important; /* real browsers */
+	min-height:100%; /* real browsers */
   text-align: center;
 }
 
-.tech-skills-hdr {
+section > h1:first-of-type {
   color: antiquewhite;
   padding-top: 20px;
 }
 
-.projects {
-  position: relative;
+#projects {
   z-index: 100;
-  margin-top: -57px;
-  padding-top: 57px;
   background-image: linear-gradient(#5bb2cd, #3e98bb);
-  /* background-image: linear-gradient(#1990bf, #1990bf); */
-  text-align: center;
-}   
+}
+
+#techSkills {
+  z-index: 200;
+  background-image: linear-gradient(#911e1b, #711c19);
+}
 
 .full-height {
   height: 100vh;
-}
-
-.projects-spacer {
-  height: 58px;
-  background-color: #571816;
 }
 
 .skills-flex {
