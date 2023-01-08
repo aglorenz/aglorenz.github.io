@@ -1,3 +1,13 @@
+:root {
+  --topblue: #44a7cd;
+  --btmblue: #3e98bb;
+  --toporng: #f0592f;
+  --btmorng: #e7552d;
+  --topbrick: #911e1b;
+  --btmbrick: #711c19;
+}
+
+
 /* -------------------------------------------
 HEADER STYLING 
 ---------------------------------------------- */
@@ -31,14 +41,19 @@ section > h1:first-of-type {
   padding-top: 20px;
 }
 
+#navbar {
+  background-image: linear-gradient(var(--toporng), var(--btmorng));
+}
+
+
 #projects {
   z-index: 100;
-  background-image: linear-gradient(#5bb2cd, #3e98bb);
+  background-image: linear-gradient(var(--topblue), var(--btmblue));
 }
 
 #techSkills {
   z-index: 200;
-  background-image: linear-gradient(#911e1b, #711c19);
+  background-image: linear-gradient(var(--topbrick), var(--btmbrick));
 }
 
 .full-height {
@@ -72,26 +87,33 @@ button {
   font-weight: bold;
   border: none;
   padding: 0.2em 1em;
-  box-shadow: 0 0 0 2px #000 inset;
+  box-shadow: 3px 3px 3px #000;
   border-radius: 0.25em;
   cursor: pointer;
-  transition: background 0.4s ease, color 0.4s ease;
+  transition: background 0.3s ease, color 0.4s ease;
 }
 
 .btn-blu {
-  background-color: #1990bf;
+  background-color: var(--btmblue);
   color: #fff;
 }
 
 .btn-orng {
-  background-color: #f0592f;
+  background-image:  linear-gradient(var(--toporng), var(--btmorng));
   color: #fff;
 }
 
 button:hover {
-  box-shadow: 0 0 0 2px #000 inset;
+  box-shadow: 2px 2px 2px #000 inset;
   color: #000;
-  background-color: transparent;
+}
+
+button.btn-orng:hover {
+  background-image:  linear-gradient(var(--btmorng), var(--toporng));
+}
+
+button.btn-blu:hover {
+  background-image:  linear-gradient(var(--btmblue), var(--topblue));
 }
 
 /* ---------------------------------------------------------------
@@ -167,7 +189,7 @@ button:hover {
   border-radius: 0.5em;
   font-size: 14px;
   line-height: 1.5;
-  box-shadow: 5px 5px 17px #f0592f;
+  box-shadow: 5px 5px 17px var(--toporng);
   opacity: 0; /* so we can animate transition to visible */
   }
 
