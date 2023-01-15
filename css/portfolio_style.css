@@ -1,62 +1,13 @@
 :root {
-  --topblue: #44a7cd;
-  /* --btmblue: #3e98bb; */
-  --btmblue: #3b8fb0;
-  --toporng: #f0592f;
-  --btmorng: #e7552d;
-  --topbrick: #911e1b;
-  --btmbrick: #711c19;
+  --top-orng: #f0592f;
+  --btm-orng: #d5552d;
+  --top-blue: #44a7cd;
+  /* --btm-blue: #3e98bb; */
+  --btm-blue: #3b8fb0;
+  --top-brick: #911e1b;
+  --btm-brick: #711c19;
+  --t-sec: 0.3s; /* transition time for buttons */
 }
-
-/* ========================= */
-/* <button  class="keyframe"> */
-:root {
-  --toporng: #f0592f;
-  --btmorng: #d5552d;
-}
-
-
-.btn-3D {
-  font-size: 1.25em;
-  font-weight: bold;
-  border: none;
-  padding: 0.2em 1em;
-  margin: 0 .07em;
-  border-radius: 0.25em;
-  cursor: pointer;
-  position: relative;
-  background: linear-gradient(var(--toporng), var(--btmorng));
-  z-index: 1;
-  box-shadow: inset 0 0 0px transparent, 3px 3px 3.5px black;
-  transition: box-shadow 0.3s, color 0.3s;
-}
-
-.btn-3D::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-radius: 0.25em;
-  cursor: pointer;
-  background: linear-gradient(var(--btmorng), var(--toporng));
-  box-shadow: inset 2.5px 2.5px 1.5px black, 0 0 0px transparent;
-  z-index: -1;
-  transition: opacity 0.3s;
-  opacity: 0;
-}
-
-.keyframe:hover {
-  color: black;
-  box-shadow: inset 0 0 0px transparent, 0 0 0px transparent;
-}
-
-.keyframe:hover::before {
-  opacity: 1;
-}
-
-/* ====================================== */
 
 /* -------------------------------------------
 HEADER STYLING 
@@ -92,18 +43,17 @@ section > h1:first-of-type {
 }
 
 #navbar {
-  background-image: linear-gradient(var(--toporng), var(--btmorng));
+  background-image: linear-gradient(var(--top-orng), var(--btm-orng));
 }
-
 
 #projects {
   z-index: 100;
-  background-image: linear-gradient(var(--topblue), var(--btmblue));
+  background-image: linear-gradient(var(--top-blue), var(--btm-blue));
 }
 
 #techSkills {
   z-index: 200;
-  background-image: linear-gradient(var(--topbrick), var(--btmbrick));
+  background-image: linear-gradient(var(--top-brick), var(--btm-brick));
 }
 
 .full-height {
@@ -133,37 +83,62 @@ section > h1:first-of-type {
 }
 
 button {
-  /* font-size: 1.25em;
+  font-size: 1.25em;
   font-weight: bold;
   border: none;
   padding: 0.2em 1em;
-  box-shadow: 3px 3px 3px #000;
   border-radius: 0.25em;
-  cursor: pointer; */
-  /* transition: box-shadow 0.4s ease, color 0.4s ease; */
+  cursor: pointer;
 }
 
-.btn-blu {
-  background-color: var(--btmblue);
-  color: #fff;
+.btn-3D {
+  /* Relative needed so button color changes rather than page background */
+  position: relative;
+  color: white;
+  z-index: 1;
+  box-shadow: inset 0 0 0px transparent, 3px 3px 3.5px black;
+  transition: box-shadow var(--t-sec), color var(--t-sec), background var(--t-sec);
 }
 
-.btn-orng, .xmodal-close {
-  background-image:  linear-gradient(var(--toporng), var(--btmorng));
-  color: #fff;
+.btn-3D::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 0.25em;
+  box-shadow: inset 2.5px 2.5px 1.5px black, 0 0 0px transparent;
+  z-index: -1;
+  transition: opacity var(--t-sec);
+  opacity: 0;
 }
 
-button:hover {
-  box-shadow: 2px 2px 2px #000 inset;
-  color: #000;
+.btn-3D:hover {
+  color: black;
+  box-shadow: inset 0 0 0px transparent, 0 0 0px transparent;
 }
 
-button.btn-orng:hover {
-  background-image:  linear-gradient(var(--btmorng), var(--toporng));
+.btn-3D:hover::before {
+  opacity: 1;
 }
 
-button.btn-blu:hover {
-  background-image:  linear-gradient(var(--btmblue), var(--topblue));
+.btn-3D.btn-orng {
+  background: linear-gradient(var(--top-orng), var(--btm-orng));
+  margin: 0em .1em;
+}
+
+.btn-3D.btn-orng::before {
+  background-image: linear-gradient(var(--btm-orng), var(--top-orng));
+  margin: 0em .1em;
+}
+
+.btn-3D.btn-blue {
+  background: linear-gradient(var(--top-blue), var(--btm-blue));
+}
+
+.btn-3D.btn-blue::before {
+  background-image: linear-gradient(var(--btm-blue), var(--top-blue));
 }
 
 /* ---------------------------------------------------------------
@@ -239,7 +214,7 @@ button.btn-blu:hover {
   border-radius: 0.5em;
   font-size: 14px;
   line-height: 1.5;
-  box-shadow: 5px 5px 17px var(--toporng);
+  box-shadow: 5px 5px 17px var(--top-orng);
   opacity: 0; /* so we can animate transition to visible */
   }
 
