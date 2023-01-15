@@ -130,7 +130,6 @@ button {
 
 .btn-3D.btn-orng::before {
   background-image: linear-gradient(var(--btm-orng), var(--top-orng));
-  margin: 0em .1em;
 }
 
 .btn-3D.btn-blue {
