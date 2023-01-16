@@ -47,7 +47,7 @@ section > h1:first-of-type {
 }
 
 #logo {
-  margin-top: 8px;
+  margin-top: 2px;
   margin-right: 8px;
 }
 a {
@@ -318,6 +318,11 @@ button {
 }
 
 /* -------------  Media Queries  -------- */
+@media screen and (max-width: 991px) {
+  #logo {
+      margin-top: 8px;
+  }
+}
 /*
 @media screen and (max-height: 600px) {
   .xmodal {
