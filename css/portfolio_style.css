@@ -50,6 +50,10 @@ section > h1:first-of-type {
   margin-top: 2px;
   margin-right: 8px;
 }
+.nav-item {
+  width: max-content
+}
+
 a {
   transition: 0.5s;
   position: relative;
@@ -58,8 +62,8 @@ a {
 a::after {
   position: absolute;
   content: "";
-  width: calc(100% - 16px); /* 16px = padding left and right of 8px of menu item */
-  left: 8px;
+  width: 100%;  /* will go width of content now with overriding media query */
+  left: 0;
   height: 3px;  /* underline height */
   top: 80%;
   background: rgba(250, 235, 215, .8); /* this is the underline  color */
@@ -321,6 +325,19 @@ button {
 @media screen and (max-width: 991px) {
   #logo {
       margin-top: 8px;
+  }
+}
+
+/* Overriding the settings of an earlier media query in _navbar.scss 
+   which is part of Bootstrap.  Remove padding and add margin to make 
+   the menu animated underline only go as wide as the menu content 
+   Works for collapsed menu as well.*/
+@media screen and (min-width: 768px) {
+  .navbar-expand-md .navbar-nav .nav-link {
+    margin-right: .5em;
+    margin-left: .5em;
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 /*
