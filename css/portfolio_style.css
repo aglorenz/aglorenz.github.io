@@ -59,7 +59,7 @@ a {
   position: relative;
 }
 
-a::after {
+li a::after {
   position: absolute;
   content: "";
   width: 100%;  /* will go width of content now with overriding media query */
@@ -72,12 +72,12 @@ a::after {
   transform-origin: center;
 }
 
-a:hover {
+li a:hover {
   /* color: rgba(0, 0, 0, 1.0); */
   color: black !important;
 }
 
-a:hover::after {
+li a:hover::after {
   transform: scaleX(1);
   transform-origin: center;
 }
