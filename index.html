@@ -180,6 +180,19 @@
               <button class="btn-3D btn-orng">View it</button> </a>
           </div>
 
+          <!-------------------------------- Car Insurance  --------------------------------->  
+
+          <div  class="skill-cell">
+            <img src="./img/CarInsLogo4.jpg" alt="Car Ins" class="cell-icon">
+            
+            <h4 class="cell-title">
+              <strong>Car Insurance</strong>
+            </h4>
+            <button data-xmodal-target="CarInsModal" class="xmodal-open btn-3D btn-orng">About</button>
+            <a href="http://aglorenz.somee.com/" target="_blank" rel="noopener noreferrer">
+              <button class="btn-3D btn-orng">View it</button> </a>
+          </div>
+
           <!------------------------------------ Django Profile --------------------------------->  
 
           <div class="skill-cell">
@@ -226,7 +239,7 @@
       <div class="xmodal-bg" onclick="" >
         <div class="xmodal-container">
           <div id="versionControlModal" class="xmodal-content">
-            <span class="xclose">&times;</span>
+            <span class="xclose xmodal-close">&times;</span>
             <div class="xmodal-hdr">
               <!-- <img src="img/Git-Icon-Orange2.png" alt="Version Control" class="cell-icon"> -->
               <img src="img/gitClearBranch.png" alt="Version Control" class="cell-icon">
@@ -444,6 +457,39 @@
         </div>  <!-- xmodal-container -->
       </div> <!-- xmodal-bg DRU -->
 
+
+      <!------------------------- C# .Net Car Insurance App ---------------------->
+
+      <!-- onclick="" needed to register click for Safari -->
+      <div class="xmodal-bg" onclick="" >
+        <div class="xmodal-container">
+          <div id="CarInsModal" class="xmodal-content">
+            <span class="xclose xmodal-close">&times;</span>
+            <div class="xmodal-hdr">
+              <img src="./img/CarInsLogo4.jpg" alt="Car Ins Logo" class="cell-icon">
+            </div>
+            <h1 class="xmodal-body-title">Car Insurance App</h1>
+            <div class="xmodal-body">  <!-- separate divs needed for object animation separation -->
+              <p class="xmodal-body-txt">A C# ASP.Net MVC Car Insurance app with a SQL Server database.
+                <a class="nav-link" href="https://github.com/aglorenz/The-Tech-Academy-C-Sharp-Coding-Projects/tree/master/CarInsuranceMVC-2023" 
+                  target="_blank" rel="noopener noreferrer">GitHub Code <i class="fas fa-external-link-alt"></i></a></p>
+            </div>
+            <div class="xmodal-body">
+              <h5 class=xmodal-list-hdr>Notes:</h5>
+              <ul class=xmodal-body-txt>
+                <li>App pulls customer entry form data to calculate a quote; everything is saved to the database. </li>                
+                <li>App allows Create Read Update Delete (CRUD) of customer data.</li>                
+                <li>Customer entry form upgraded with Bootstrap columns to save space.</li>                
+							</ul>
+						</div>
+            <div class="xmodal-footer">
+              <button class="xmodal-close btn-3D btn-orng">Close</button>
+              <br>
+            </div>
+          </div> <!-- xmodal-content -->
+        </div>  <!-- xmodal-container -->
+      </div> <!-- xmodal-bg CarIns -->
+
       <!------------------------------ Django Profiles  -------------------------->
 
       <!-- onclick="" needed to register click for Safari -->
@@ -456,7 +502,7 @@
             </div>
             <h1 class="xmodal-body-title">Django Profiles</h1>
             <div class="xmodal-body">  <!-- separate divs needed for object animation separation -->
-              <p class="xmodal-body-txt">A Django/Python full-stack web app that demonstrates CRUD functionality on single-table SQLite3 database.
+              <p class="xmodal-body-txt">A Django/Python web app with a SQLite3 database.
                 <a class="nav-link" href="https://github.com/aglorenz/Python-Projects/tree/main/Django%20Profiles%20App/Hello_World" 
                   target="_blank" rel="noopener noreferrer">GitHub Code <i class="fas fa-external-link-alt"></i></a></p>
             </div>

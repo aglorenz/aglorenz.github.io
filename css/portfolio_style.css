@@ -46,6 +46,10 @@ section > h1:first-of-type {
   background-image: linear-gradient(var(--top-orng), var(--btm-orng));
 }
 
+.navbar {
+  padding-bottom: .55rem; /* Override Bootstrap bottom padding.  Add .05rem */
+}
+
 #logo {
   margin-top: 2px;
   margin-right: 8px;
@@ -59,15 +63,16 @@ a {
   position: relative;
 }
 
+/* For underline animation when hovering over menu item */
 li a::after {
   position: absolute;
   content: "";
-  width: 100%;  /* will go width of content now with overriding media query */
+  width: 100%;  /* will now go width of content with overriding media query */
   left: 0;
   height: 3px;  /* underline height */
   top: 80%;
   background: rgba(250, 235, 215, .8); /* this is the underline  color */
-  transition: transform 0.3s, color 0.3s;
+  transition: transform 0.3s ease-out, color 0.3s ease-out;
   transform: scaleX(0);
   transform-origin: center;
 }
