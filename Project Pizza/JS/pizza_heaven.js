@@ -290,7 +290,7 @@ function scrollUntilVisible(id, duration, offset=0) {
     // console.log("window.innerHeight = " + window.innerHeight); // height of window
     // console.log("scrollDistance = " + scrollDistance); 
 
-    var y = $(window).scrollTop(); // current y position
+    //var y = $(window).scrollTop(); // current y position
     // $('html, body').animate({ scrollTop: y + scrollDistance },duration, 'swing');
     $('html, body').animate({ scrollTop: botOfDiv - window.innerHeight }, duration, 'swing');
 }
