@@ -120,7 +120,8 @@ li a:hover::after {
 }
 
 .cell-title {
-  color: antiquewhite
+  color: antiquewhite;
+  margin-top: .4rem;
 }
 
 button {
