@@ -6,7 +6,7 @@ $('.navbar-nav>li>a').on('click', function(){
     $('.navbar-collapse').collapse('hide');
 });
 
-// check if link is local or external
+// check if link is local or external.
 function link_is_external(link_element) {
   return (link_element.host !== window.location.host);
 }
